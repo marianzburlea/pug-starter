@@ -1,0 +1,25 @@
+{
+  "name": "pug-starter",
+  "version": "1.0.0",
+  "description": "Simple pug (jade) starter aimed to deliver quick HTML & CSS projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianzburlea/pug-starter.git"
+  },
+  "keywords": [
+    "pug",
+    "starter",
+    "jade",
+    "starter"
+  ],
+  "author": "Marian Zburlea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marianzburlea/pug-starter/issues"
+  },
+  "homepage": "https://github.com/marianzburlea/pug-starter#readme"
+}
