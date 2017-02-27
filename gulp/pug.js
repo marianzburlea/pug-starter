@@ -9,17 +9,24 @@ import foldero from 'foldero';
 const pug = ({
   gulp,
   taskTarget,
-  config
+  config,
+  plugins,
+  args
 }) => {
   const dirs = config.directories;
 
   gulp.task('pug', () => {
     return gulp
+      // target pug files
       .src([
         path.join(dirs.source, '**/*.pug'),
         // Ignore files and folders that start with "_"
         '!' + path.join(dirs.source, '{**/\_*,**/\_*/**}')
       ])
+      // compile pug to html
+      .pipe(plugins.pug({
+        pretty: args.production ? false: true
+      }))
       .pipe(gulp.dest(path.join(taskTarget)));
   });
 };

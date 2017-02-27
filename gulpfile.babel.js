@@ -8,6 +8,9 @@ import fs from 'fs';
 import wrench from 'wrench';
 // minimist - argument parser without all the fanciful decoration
 import minimist from 'minimist';
+// gulp-load-plugins - Loads gulp plugins from package dependencies and attaches
+// them to an object of your choice.
+import gulpLoadPlugins from 'gulp-load-plugins';
 
 // Import package.json to grab and use the config property
 import packageJsonData from './package.json';
@@ -17,6 +20,13 @@ const args = minimist(process.argv.slice(2));
 const dirs = config.directories;
 const taskTarget = args.production ? dirs.production : dirs.development;
 
+// Load gulp plugins
+const plugins = gulpLoadPlugins({
+  // when set to true, the plugin will log info to console.
+  // Useful for bug reporting and issue debugging
+  DEBUG: false
+});
+
 // Read all files from the gulp folder and load all gulp tasks
 wrench.readdirSyncRecursive('./gulp')
   // Filter the file collection to only allow JavaScript files
@@ -25,7 +35,8 @@ wrench.readdirSyncRecursive('./gulp')
     gulp,
     config,
     args,
-    taskTarget
+    taskTarget,
+    plugins
   }));
 
 // Default gulp task
