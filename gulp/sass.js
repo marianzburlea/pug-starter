@@ -34,6 +34,17 @@ const sass = ({
           path.join(dirs.source, dirs.component)
         ]
       }))
+      .pipe(plugins.postcss([
+        autoprefixer({
+          browsers: [
+            'last 2 version',
+            '> 5%',
+            'safari 5',
+            'ios 6',
+            'android 4'
+          ]
+        })
+      ]))
       .pipe(gulp.dest(taskTarget));
   });
 };
