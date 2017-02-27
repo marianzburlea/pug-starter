@@ -4,8 +4,6 @@
 // and time-consuming tasks in your workflow
 import gulp from 'gulp';
 import fs from 'fs';
-// wrench - Recursive filesystem (and other) operations that Node should have
-import wrench from 'wrench';
 // minimist - argument parser without all the fanciful decoration
 import minimist from 'minimist';
 // gulp-load-plugins - Loads gulp plugins from package dependencies and attaches
@@ -28,8 +26,7 @@ const plugins = gulpLoadPlugins({
 });
 
 // Read all files from the gulp folder and load all gulp tasks
-wrench.readdirSyncRecursive('./gulp')
-  // Filter the file collection to only allow JavaScript files
+fs.readdirSync('./gulp')
   .filter(fileName => /\.(js)$/i.test(fileName))
   .map(fileName => require(`./gulp/${fileName}`)({
     gulp,
