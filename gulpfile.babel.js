@@ -4,6 +4,8 @@
 // and time-consuming tasks in your workflow
 import gulp from 'gulp';
 import fs from 'fs';
+// browser-sync - Live CSS Reload & Browser Syncing
+import browserSyncLib from 'browser-sync';
 // minimist - argument parser without all the fanciful decoration
 import minimist from 'minimist';
 // gulp-load-plugins - Loads gulp plugins from package dependencies and attaches
@@ -17,6 +19,9 @@ const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
 const dirs = config.directories;
 const taskTarget = args.production ? dirs.production : dirs.development;
+
+// Create a new browserSync instance
+const browserSync = browserSyncLib.create();
 
 // Load gulp plugins
 const plugins = gulpLoadPlugins({
@@ -33,8 +38,14 @@ fs.readdirSync('./gulp')
     config,
     args,
     taskTarget,
-    plugins
+    plugins,
+    browserSync
   }));
+
+// Server task with watch
+// gulp.task('dev', [
+//   'pug',
+// ]);
 
 // Default gulp task
 gulp.task('default', () => {
