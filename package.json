@@ -4,6 +4,7 @@
   "description": "Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "//": "CUSTOM CONFIGURATION",
