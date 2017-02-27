@@ -45,6 +45,9 @@ const pug = ({
         // Ignore files and folders that start with "_"
         '!' + path.join(dirs.source, '{**/\_*,**/\_*/**}')
       ])
+      // Only deal with files that change in the pipeline
+      .pipe(plugins.changed(taskTarget))
+      .pipe(plugins.plumber())
       // compile pug to html
       .pipe(plugins.pug({
         // compress if in production
