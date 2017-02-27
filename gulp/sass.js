@@ -46,6 +46,7 @@ const sass = ({
           ]
         })
       ]))
+      .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(taskTarget));
   });
 };
