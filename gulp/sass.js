@@ -1,6 +1,7 @@
 'use strict';
 
 import path from 'path';
+import fs from 'fs';
 import autoprefixer from 'autoprefixer';
 
 const sass = ({

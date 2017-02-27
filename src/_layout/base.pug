@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  block settings
+  head
+    if title
+      title #{title}
+    if description
+      meta(content=description, name="description")
+    if config.entries.css.external
+      link(rel="stylesheet", href="style.css")
+    if config.entries.css.inline
+      link(rel="stylesheet", href=`${inlinePath}`, inline)
+  body
+    block content
