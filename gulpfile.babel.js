@@ -12,8 +12,10 @@ import minimist from 'minimist';
 // Import package.json to grab and use the config property
 import packageJsonData from './package.json';
 
-const config = {...packageJsonData.config};
+const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
+const dirs = config.directories;
+const taskTarget = args.production ? dirs.production : dirs.development;
 
 // Read all files from the gulp folder and load all gulp tasks
 wrench.readdirSyncRecursive('./gulp')
@@ -22,7 +24,8 @@ wrench.readdirSyncRecursive('./gulp')
   .map(fileName => require(`./gulp/${fileName}`)({
     gulp,
     config,
-    args
+    args,
+    taskTarget
   }));
 
 // Default gulp task

@@ -7,9 +7,20 @@ import path from 'path';
 import foldero from 'foldero';
 
 const pug = ({
-  gulp
+  gulp,
+  taskTarget,
+  config
 }) => {
+  const dirs = config.directories;
+
   gulp.task('pug', () => {
+    return gulp
+      .src([
+        path.join(dirs.source, '**/*.pug'),
+        // Ignore files and folders that start with "_"
+        '!' + path.join(dirs.source, '{**/\_*,**/\_*/**}')
+      ])
+      .pipe(gulp.dest(path.join(taskTarget)));
   });
 };
 

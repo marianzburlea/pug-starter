@@ -11,6 +11,7 @@
     "directories": {
       "development": "tmp",
       "production": "build",
+      "ghpages": "docs",
       "source": "src",
       "data": "_data",
       "component": "_component",
