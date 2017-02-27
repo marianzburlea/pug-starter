@@ -6,6 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "//": "CUSTOM CONFIGURATION",
+  "config": {
+    "directories": {
+      "development": "tmp",
+      "production": "build",
+      "source": "src",
+      "data": "_data",
+      "component": "_component",
+      "asset": "_asset",
+      "image": "image",
+      "font": "font"
+    },
+    "entries": {
+      "cssExternal": "style**.{scss,sass}",
+      "cssInline": "inline**.{scss,sass}",
+      "css": {
+        "inline": true,
+        "external": true
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marianzburlea/pug-starter.git"
@@ -30,6 +51,7 @@
     "eslint": "^3.16.1",
     "foldero": "^0.1.1",
     "gulp": "^3.9.1",
+    "minimist": "^1.2.0",
     "wrench": "^1.5.9"
   }
 }
