@@ -14,8 +14,30 @@ const pug = ({
   args
 }) => {
   const dirs = config.directories;
+  const dataPath = path.join(dirs.source, dirs.data);
 
   gulp.task('pug', () => {
+    let siteData = {};
+    if (fs.existsSync(dataPath)) {
+      // Convert directory to a JavaScript Object
+      siteData = foldero(dataPath, {
+        recurse: true,
+        whitelist: '(.*/)*.json$',
+        loader: file => {
+          let json = {};
+          try {
+            json = JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          catch (e) {
+            console.log(`Error parsing data file: ${file}`);
+            console.log(e);
+          }
+
+          return json;
+        }
+      });
+    }
+
     return gulp
       // target pug files
       .src([
@@ -25,7 +47,17 @@ const pug = ({
       ])
       // compile pug to html
       .pipe(plugins.pug({
-        pretty: args.production ? false: true
+        // compress if in production
+        pretty: args.production ? false: true,
+        // Make data available to pug
+        locals: {
+          config,
+          debug: true,
+          site: {
+            data: siteData
+          },
+          taskTarget
+        }
       }))
       .pipe(gulp.dest(path.join(taskTarget)));
   });

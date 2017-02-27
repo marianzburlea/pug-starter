@@ -1,1 +1,7 @@
-h1 Welcome to pug starter!
+div
+  h1 Welcome to pug starter!
+  div Compile to path #{taskTarget}
+  ul
+    each menuItem in site.data.menu
+      li
+        a(href=menuItem.link) #{menuItem.text}
