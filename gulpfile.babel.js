@@ -51,6 +51,14 @@ gulp.task('dev', gulp.series(
   'watch'
 ));
 
+// Build production ready code
+gulp.task('build', gulp.series(
+  'font',
+  'image',
+  'sass',
+  'pug'
+));
+
 // Default gulp task
 gulp.task('default', () => {
   console.log('Default gulp task');
