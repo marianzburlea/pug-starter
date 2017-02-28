@@ -17,8 +17,8 @@ import packageJsonData from './package.json';
 
 const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
-const dirs = config.directory;
-const taskTarget = args.production ? dirs.production : dirs.development;
+const dir = config.directory;
+const taskTarget = args.production ? dir.production : dir.development;
 
 // Create a new browserSync instance
 const browserSync = browserSyncLib.create();
@@ -43,7 +43,12 @@ fs.readdirSync('./gulp')
   }));
 
 // Server task with watch
-gulp.task('dev', gulp.series('sass', 'pug', 'watch'));
+gulp.task('dev', gulp.series(
+  'font',
+  'sass',
+  'pug',
+  'watch'
+));
 
 // Default gulp task
 gulp.task('default', () => {

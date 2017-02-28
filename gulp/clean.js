@@ -7,21 +7,21 @@ const clean = ({
   gulp,
   config
 }) => {
-  const dirs = config.directory;
+  const dir = config.directory;
 
   // clean development project
   gulp.task('clean:development', del.bind(null, [
-    path.join(dirs.development)
+    path.join(dir.development)
   ]));
 
   // clean development project
   gulp.task('clean:production', del.bind(null, [
-    path.join(dirs.production)
+    path.join(dir.production)
   ]));
 
   // clean development project
   gulp.task('clean:ghpages', del.bind(null, [
-    path.join(dirs.ghpages)
+    path.join(dir.ghpages)
   ]));
 };
 

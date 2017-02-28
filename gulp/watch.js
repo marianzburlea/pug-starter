@@ -10,7 +10,7 @@ const watch = ({
   browserSync,
   taskTarget
 }) => {
-  const dirs = config.directory;
+  const dir = config.directory;
 
   // Gulp watch task
   gulp.task('watch', () => {
@@ -21,15 +21,23 @@ const watch = ({
 
       // Pug templates
       gulp.watch([
-        path.join(dirs.source, '**/*.pug'),
-        path.join(dirs.source, dirs.data, '**/*.json')
+        path.join(dir.source, '**/*.pug'),
+        path.join(dir.source, dir.data, '**/*.json')
       ], gulp.series('pug'));
 
       // Sass style
       gulp.watch([
-        path.join(dirs.source, '**/*.{scss,sass}'),
-        path.join(dirs.source, dirs.component, '**/*.{scss,sass}')
+        path.join(dir.source, '**/*.{scss,sass}'),
+        path.join(dir.source, dir.component, '**/*.{scss,sass}')
       ], gulp.series('sass'));
+
+      // Font files
+      gulp.watch(path.join(
+        dir.source,
+        dir.asset,
+        dir.font,
+        '**/*.{otf,eot,svg,ttf,woff,woff2}'
+      ), gulp.series('font'));
 
       // inline.css
       gulp.watch([

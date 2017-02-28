@@ -14,8 +14,8 @@ const pug = ({
   args,
   browserSync
 }) => {
-  const dirs = config.directory;
-  const dataPath = path.join(dirs.source, dirs.data);
+  const dir = config.directory;
+  const dataPath = path.join(dir.source, dir.data);
   const inlinePath = path.join(__dirname, '..', taskTarget, 'inline.css');
 
   gulp.task('pug', () => {
@@ -43,9 +43,9 @@ const pug = ({
     return gulp
       // target pug files
       .src([
-        path.join(dirs.source, '**/*.pug'),
+        path.join(dir.source, '**/*.pug'),
         // Ignore files and folders that start with "_"
-        '!' + path.join(dirs.source, '{**/\_*,**/\_*/**}')
+        '!' + path.join(dir.source, '{**/\_*,**/\_*/**}')
       ])
       // Only deal with files that change in the pipeline
       .pipe(plugins.changed(taskTarget))

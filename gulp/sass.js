@@ -11,15 +11,15 @@ const sass = ({
   taskTarget,
   browserSync
 }) => {
-  const dirs = config.directory;
+  const dir = config.directory;
   const entry = config.entry;
   const cssPath = [];
 
   if (entry.css.external) {
-    cssPath.push(path.join(dirs.source, entry.cssExternal));
+    cssPath.push(path.join(dir.source, entry.cssExternal));
   }
   if (entry.css.inline) {
-    cssPath.push(path.join(dirs.source, entry.cssInline));
+    cssPath.push(path.join(dir.source, entry.cssInline));
   }
 
   // Compile sass
@@ -33,8 +33,8 @@ const sass = ({
         outputStyle: args.production ? 'compressed' : 'expanded',
         precision: 10,
         includePaths: [
-          path.join(dirs.source),
-          path.join(dirs.source, dirs.component)
+          path.join(dir.source),
+          path.join(dir.source, dir.component)
         ]
       }))
       .pipe(plugins.postcss([
