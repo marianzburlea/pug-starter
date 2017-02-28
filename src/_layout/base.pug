@@ -6,9 +6,9 @@ html(lang="en")
       title #{title}
     if description
       meta(content=description, name="description")
-    if config.entries.css.external
+    if config.entry.css.external
       link(rel="stylesheet", href="style.css")
-    if config.entries.css.inline
+    if config.entry.css.inline
       link(rel="stylesheet", href=`${inlinePath}`, inline)
   body
     block content

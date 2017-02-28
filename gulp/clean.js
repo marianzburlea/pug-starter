@@ -7,7 +7,7 @@ const clean = ({
   gulp,
   config
 }) => {
-  const dirs = config.directories;
+  const dirs = config.directory;
 
   // clean development project
   gulp.task('clean:development', del.bind(null, [

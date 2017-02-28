@@ -1,7 +1,6 @@
 'use strict';
 
 import path from 'path';
-import fs from 'fs';
 import autoprefixer from 'autoprefixer';
 
 const sass = ({
@@ -11,20 +10,20 @@ const sass = ({
   config,
   taskTarget
 }) => {
-  const dirs = config.directories;
-  const entries = config.entries;
+  const dirs = config.directory;
+  const entry = config.entry;
   const cssPath = [];
 
-  if (entries.css.external) {
-    cssPath.push(path.join(dirs.source, entries.cssExternal));
+  if (entry.css.external) {
+    cssPath.push(path.join(dirs.source, entry.cssExternal));
   }
-  if (entries.css.inline) {
-    cssPath.push(path.join(dirs.source, entries.cssInline));
+  if (entry.css.inline) {
+    cssPath.push(path.join(dirs.source, entry.cssInline));
   }
 
   // Compile sass
   gulp.task('sass', () => {
-    gulp.src(cssPath)
+    return gulp.src(cssPath)
       .pipe(plugins.plumber())
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.sass({

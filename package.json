@@ -9,7 +9,7 @@
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {
-    "directories": {
+    "directory": {
       "development": "tmp",
       "production": "build",
       "ghpages": "docs",
@@ -20,11 +20,11 @@
       "image": "image",
       "font": "font"
     },
-    "entries": {
+    "entry": {
       "cssExternal": "style**.{scss,sass}",
       "cssInline": "inline**.{scss,sass}",
       "css": {
-        "inline": true,
+        "inline": false,
         "external": true
       }
     }

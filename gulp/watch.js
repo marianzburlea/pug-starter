@@ -9,16 +9,22 @@ const watch = ({
   config,
   browserSync
 }) => {
-  const dirs = config.directories;
+  const dirs = config.directory;
 
   // Gulp watch task
   gulp.task('watch', () => {
     if (!args.production) {
       // Pug templates
-      return gulp.watch([
+      gulp.watch([
         path.join(dirs.source, '**/*.pug'),
         path.join(dirs.source, dirs.data, '**/*.json')
       ], gulp.series('pug'));
+
+      // Sass style
+      gulp.watch([
+        path.join(dirs.source, '**/*.{scss,sass}'),
+        path.join(dirs.source, dirs.component, '**/*.{scss,sass}')
+      ], config.entry.css.inline ? gulp.series('sass', 'pug') : gulp.series('sass'));
     }
   });
 };

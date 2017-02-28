@@ -13,7 +13,7 @@ const pug = ({
   plugins,
   args
 }) => {
-  const dirs = config.directories;
+  const dirs = config.directory;
   const dataPath = path.join(dirs.source, dirs.data);
   const inlinePath = path.join(__dirname, '..', taskTarget, 'inline.css');
 
