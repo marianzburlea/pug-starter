@@ -8,7 +8,8 @@ const sass = ({
   plugins,
   args,
   config,
-  taskTarget
+  taskTarget,
+  browserSync
 }) => {
   const dirs = config.directory;
   const entry = config.entry;
@@ -24,7 +25,9 @@ const sass = ({
   // Compile sass
   gulp.task('sass', () => {
     return gulp.src(cssPath)
+      // Only deal with files that change in the pipeline
       .pipe(plugins.plumber())
+      .pipe(plugins.cached())
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.sass({
         outputStyle: args.production ? 'compressed' : 'expanded',
@@ -46,7 +49,8 @@ const sass = ({
         })
       ]))
       .pipe(plugins.sourcemaps.write('./'))
-      .pipe(gulp.dest(taskTarget));
+      .pipe(gulp.dest(taskTarget))
+      .pipe(browserSync.stream({match: '**/*.css'}));
   });
 };
 

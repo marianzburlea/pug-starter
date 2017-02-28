@@ -11,7 +11,8 @@ const pug = ({
   taskTarget,
   config,
   plugins,
-  args
+  args,
+  browserSync
 }) => {
   const dirs = config.directory;
   const dataPath = path.join(dirs.source, dirs.data);
@@ -69,7 +70,8 @@ const pug = ({
         fs.existsSync(inlinePath),
         plugins.inlineSource()
       ))
-      .pipe(gulp.dest(path.join(taskTarget)));
+      .pipe(gulp.dest(path.join(taskTarget)))
+      .on('end', browserSync.reload);
   });
 };
 
