@@ -24,7 +24,7 @@
       "cssExternal": "style**.{scss,sass}",
       "cssInline": "inline**.{scss,sass}",
       "css": {
-        "inline": false,
+        "inline": true,
         "external": true
       }
     }
