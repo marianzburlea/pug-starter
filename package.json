@@ -1,7 +1,7 @@
 {
   "name": "pug-starter",
   "version": "1.0.0",
-  "description": "Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects",
+  "description": "Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects to private server or automatic deploy GitHub pages",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev",
