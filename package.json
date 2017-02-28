@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gulp dev",
     "prod": "gulp build --production",
+    "deploy": "gulp build --production && gulp deploy && gulp clean:ghpages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "//": "CUSTOM CONFIGURATION",
@@ -13,7 +14,7 @@
     "directory": {
       "development": "tmp",
       "production": "build",
-      "ghpages": "docs",
+      "ghpages": ".publish",
       "source": "src",
       "data": "_data",
       "component": "_component",
@@ -59,6 +60,7 @@
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^2.0.0",
     "gulp-debug": "^3.1.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-inline-source": "^3.0.0",
