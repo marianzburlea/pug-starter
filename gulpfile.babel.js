@@ -45,6 +45,7 @@ fs.readdirSync('./gulp')
 // Server task with watch
 gulp.task('dev', gulp.series(
   'font',
+  'image',
   'sass',
   'pug',
   'watch'

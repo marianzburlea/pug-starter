@@ -39,6 +39,14 @@ const watch = ({
         '**/*.{otf,eot,svg,ttf,woff,woff2}'
       ), gulp.series('font'));
 
+      // Image files
+      gulp.watch(path.join(
+        dir.source,
+        dir.asset,
+        dir.font,
+        '**/*.{jpg,jpeg,gif,svg,png}'
+      ), gulp.series('image'));
+
       // inline.css
       gulp.watch([
         path.join(taskTarget, 'inline.css')

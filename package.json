@@ -59,6 +59,7 @@
     "gulp-changed": "^2.0.0",
     "gulp-debug": "^3.1.0",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
     "gulp-inline-source": "^3.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
@@ -66,6 +67,8 @@
     "gulp-pug": "^3.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.2.0",
     "minimist": "^1.2.0"
   }
 }

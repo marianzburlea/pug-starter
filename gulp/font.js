@@ -2,7 +2,7 @@
 
 import path from 'path';
 
-const fonts = ({
+const font = ({
   gulp,
   config,
   plugins,
@@ -24,4 +24,4 @@ const fonts = ({
   });
 };
 
-export default fonts;
+export default font;
