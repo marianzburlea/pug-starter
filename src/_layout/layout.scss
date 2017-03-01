@@ -1,9 +1,10 @@
-@import "../_component/header/header";
-@import "../_component/footer/footer";
 html, body {
   height: 100%;
   margin: 0;
+  color: $zambezi;
+  font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
 }
+
 .container {
   min-height: 100%;
   display: flex;
@@ -19,5 +20,9 @@ html, body {
 
   .content {
     flex-grow: 1;
+    border-radius: 0.2rem;
+    border: 1px solid $alto;
+    margin: 1rem 0;
+    padding: 0 1rem;
   }
 }
