@@ -1,0 +1,8 @@
+$class: 'footer';
+
+.#{$class} {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-around;
+}

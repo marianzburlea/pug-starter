@@ -1,0 +1,20 @@
+$class: 'top-menu';
+.#{$class} {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 2rem;
+  align-items: center;
+}
+
+.#{$class}-link {
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  color: #c00;
+
+  &:hover {
+    color: white;
+    background-color: #c00;
+  }
+}

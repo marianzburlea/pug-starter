@@ -27,7 +27,7 @@ const sass = ({
     return gulp.src(cssPath)
       // Only deal with files that change in the pipeline
       .pipe(plugins.plumber())
-      .pipe(plugins.cached())
+      // .pipe(plugins.cached())
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.sass({
         outputStyle: args.production ? 'compressed' : 'expanded',

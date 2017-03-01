@@ -1,0 +1,23 @@
+@import "../_component/header/header";
+@import "../_component/footer/footer";
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  .header {
+    order: -1;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+}
