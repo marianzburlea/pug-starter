@@ -16,7 +16,8 @@ const watch = ({
   gulp.task('watch', () => {
     if (!args.production) {
       browserSync.init({
-        server: taskTarget
+        server: taskTarget,
+        notify: false
       });
 
       // Pug templates
