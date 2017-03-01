@@ -9,6 +9,9 @@ html(lang="en")
     if config.entry.css.inline
       link(rel="stylesheet", href=`${inlinePath}`, inline)
   body
-    block content
+    .content
+      block content
+    include ../_component/header/header
+    include ../_component/footer/footer
 if config.entry.css.external
   link(rel="stylesheet", href="style.css")
