@@ -16,7 +16,7 @@ const pug = ({
 }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
-  const inlinePath = path.join(__dirname, '..', taskTarget, 'inline.css');
+  const inlinePath = path.join(taskTarget, 'inline.css');
 
   gulp.task('pug', () => {
     let siteData = {};
@@ -68,7 +68,9 @@ const pug = ({
       // Check if inline.css exists and use inlineSource to inject it
       .pipe(plugins.if(
         fs.existsSync(inlinePath),
-        plugins.inlineSource()
+        plugins.inlineSource({
+          rootpath: path.join(__dirname, '..')
+        })
       ))
       .pipe(gulp.dest(path.join(taskTarget)))
       .on('end', browserSync.reload);
