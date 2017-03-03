@@ -32,11 +32,13 @@ const sass = ({
       .pipe(plugins.sass({
         outputStyle: args.production ? 'compressed' : 'expanded',
         precision: 10,
+        sync: true,
         includePaths: [
           path.join(dir.source),
           path.join(dir.source, dir.component)
         ]
       }))
+      .on('error', plugins.sass.logError)
       .pipe(plugins.postcss([
         autoprefixer({
           browsers: [
