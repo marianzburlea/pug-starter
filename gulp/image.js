@@ -2,6 +2,10 @@
 
 import path from 'path';
 import pngquant from 'imagemin-pngquant';
+import jpegtran from 'imagemin-jpegtran';
+import optipng from 'imagemin-optipng';
+import gifsicle from 'imagemin-gifsicle';
+import svgo from 'imagemin-svgo';
 
 const image = ({
   gulp,
@@ -26,13 +30,15 @@ const image = ({
         args.production,
         plugins.imagemin({
           progressive: true,
+          optimizationLevel: 7,
           svgoPlugins: [{
             removeViewBox: false
           }],
           use: [
             pngquant({
               speed: 10
-            })
+            }),
+            jpegtran(), optipng(), gifsicle()
           ]
         })
       ))
