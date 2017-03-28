@@ -73,6 +73,7 @@
     "gulp-sourcemaps": "^2.4.1",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
+    "merge-stream": "^1.0.1",
     "minimist": "^1.2.0"
   }
 }
