@@ -51,7 +51,7 @@ const template = ({
           })
         ))
         .pipe(plugins.rename(`${value}.html`))
-        .pipe(plugins.debug())
+        // .pipe(plugins.debug())
         .pipe(gulp.dest(path.join(taskTarget, folderName)))
         .on('end', browserSync.reload);
       });
