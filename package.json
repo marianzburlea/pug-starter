@@ -20,7 +20,11 @@
       "component": "_component",
       "asset": "_asset",
       "image": "image",
-      "font": "font"
+      "font": "font",
+      "templateCollection": [
+        "article",
+        "product"
+      ]
     },
     "entry": {
       "cssExternal": "style**.{scss,sass}",

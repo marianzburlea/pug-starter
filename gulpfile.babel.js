@@ -49,6 +49,7 @@ gulp.task('dev', gulp.series(
   'image',
   'sass',
   'pug',
+  'template',
   'watch'
 ));
 
@@ -58,7 +59,8 @@ gulp.task('build', gulp.series(
   'copy',
   'image',
   'sass',
-  'pug'
+  'pug',
+  'template'
 ));
 
 // Default gulp task
