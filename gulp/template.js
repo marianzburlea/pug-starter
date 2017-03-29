@@ -3,9 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import mergeStream from 'merge-stream';
-// foldero - will load files from the folder you specify and construct an object
-// with properties corresponding to each loaded file
-import foldero from 'foldero';
+import { getJsonData } from './util/util';
 
 const template = ({
   gulp,

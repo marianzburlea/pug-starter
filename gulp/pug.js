@@ -2,9 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-// foldero - will load files from the folder you specify and construct an object
-// with properties corresponding to each loaded file
-import foldero from 'foldero';
+import { getJsonData } from './util/util';
 
 const pug = ({
   gulp,
@@ -19,26 +17,7 @@ const pug = ({
   const inlinePath = path.join(taskTarget, 'inline.css');
 
   gulp.task('pug', () => {
-    let siteData = {};
-    if (fs.existsSync(dataPath)) {
-      // Convert directory to a JavaScript Object
-      siteData = foldero(dataPath, {
-        recurse: true,
-        whitelist: '(.*/)*.json$',
-        loader: file => {
-          let json = {};
-          try {
-            json = JSON.parse(fs.readFileSync(file, 'utf8'));
-          }
-          catch (e) {
-            console.log(`Error parsing data file: ${file}`);
-            console.log(e);
-          }
-
-          return json;
-        }
-      });
-    }
+    let siteData = getJsonData({dataPath}) || {};
 
     return gulp
       // target pug files
