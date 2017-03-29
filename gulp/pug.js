@@ -17,7 +17,7 @@ const pug = ({
   const inlinePath = path.join(taskTarget, 'inline.css');
 
   gulp.task('pug', () => {
-    let siteData = getJsonData({dataPath}) || {};
+    let data = getJsonData({dataPath}) || {};
 
     return gulp
       // target pug files
@@ -37,9 +37,7 @@ const pug = ({
         locals: {
           config,
           debug: true,
-          site: {
-            data: siteData
-          },
+          data,
           taskTarget,
           inlinePath
         }
