@@ -19,19 +19,45 @@ const template = ({
   let inlinePath;
 
   gulp.task('template', () => {
-    console.log(template);
-    return mergeStream(
-      gulp
-        .src([
-          path.join(dir.source, '**/*.html')
-        ]),
-      gulp
-        .src([
-          path.join(dir.source, '**/*.html')
-        ])
-    )
-      .pipe(plugins.debug())
-      .pipe(gulp.dest(taskTarget));
+    let gulpStreamCollection = templateCollection.map(folderName => {
+      inlinePath = path.join(taskTarget, folderName, '../inline.css');
+      let data = getJsonData({dataPath}) || {};
+      let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
+
+      return Object.keys(templateData).map(value => {
+        return gulp.src(
+          path.join(dir.source, '_' + folderName, 'template.pug')
+        )
+        // .pipe(plugins.debug())
+        // compile pug to html
+        .pipe(plugins.pug({
+          // compress if in production
+          pretty: args.production ? false: true,
+          // Make data available to pug
+          locals: {
+            config,
+            debug: true,
+            data,
+            template: templateData[value],
+            taskTarget,
+            inlinePath
+          }
+        }))
+        // Check if inline.css exists and use inlineSource to inject it
+        .pipe(plugins.if(
+          fs.existsSync(inlinePath),
+          plugins.inlineSource({
+            rootpath: path.join(__dirname, '..')
+          })
+        ))
+        .pipe(plugins.rename(`${value}.html`))
+        .pipe(plugins.debug())
+        .pipe(gulp.dest(path.join(taskTarget, folderName)))
+        .on('end', browserSync.reload);
+      });
+    });
+
+    return mergeStream(gulpStreamCollection);
   });
 };
 

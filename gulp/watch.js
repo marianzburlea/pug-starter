@@ -26,6 +26,15 @@ const watch = ({
         path.join(dir.source, dir.data, '**/*.json')
       ], gulp.series('pug'));
 
+      // Template
+      dir.templateCollection.map(folderName => {
+        console.log(dir.templateCollection);
+        console.log(path.join(dir.source, `_${folderName}`, '**/*.json'));
+        gulp.watch([
+          path.join(dir.source, `_${folderName}`, '**/*.json')
+        ], gulp.series('template'));
+      });
+
       // Sass style
       gulp.watch([
         path.join(dir.source, '**/*.{scss,sass}'),
