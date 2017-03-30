@@ -19,12 +19,16 @@ const template = ({
   let inlinePath;
 
   gulp.task('template', () => {
+    let data = getJsonData({dataPath}) || {};
     let gulpStreamCollection = templateCollection.map(folderName => {
       inlinePath = path.join(taskTarget, folderName, '../inline.css');
-      let data = getJsonData({dataPath}) || {};
       let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
 
-      return Object.keys(templateData).map(value => {
+      return Object.keys(templateData)
+      .filter(value => {
+        return !(templateData[value] && templateData[value].config && templateData[value].config.publish === false);
+      })
+      .map(value => {
         return gulp.src(
           path.join(dir.source, '_' + folderName, 'template.pug')
         )
