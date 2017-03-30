@@ -53,7 +53,7 @@ const watch = ({
       gulp.watch(path.join(
         dir.source,
         dir.asset,
-        dir.font,
+        dir.image,
         '**/*.{jpg,jpeg,gif,svg,png}'
       ), gulp.series('image'));
 
