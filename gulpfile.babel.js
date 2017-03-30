@@ -44,6 +44,7 @@ fs.readdirSync('./gulp')
 
 // Server task with watch
 gulp.task('dev', gulp.series(
+  'clean:development',
   'font',
   'copy',
   'image',
@@ -55,6 +56,7 @@ gulp.task('dev', gulp.series(
 
 // Build production ready code
 gulp.task('build', gulp.series(
+  'clean:production',
   'font',
   'copy',
   'image',

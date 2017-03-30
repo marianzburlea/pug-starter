@@ -50,7 +50,9 @@ const template = ({
             rootpath: path.join(__dirname, '..')
           })
         ))
-        .pipe(plugins.rename(`${value}.html`))
+        .pipe(plugins.rename(
+          config.render.url.htmlExtensionOn ? `${value}.html` : `${value}/index.html`
+        ))
         // .pipe(plugins.debug())
         .pipe(gulp.dest(path.join(taskTarget, folderName)))
         .on('end', browserSync.reload);
