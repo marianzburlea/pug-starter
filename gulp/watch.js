@@ -1,6 +1,7 @@
 'use strict';
 
 import path from 'path';
+import gulpConfig from './util/config';
 
 const watch = ({
   gulp,
@@ -46,7 +47,7 @@ const watch = ({
         dir.source,
         dir.asset,
         dir.font,
-        '**/*.{otf,eot,svg,ttf,woff,woff2}'
+        gulpConfig.fileExpression.font
       ), gulp.series('font'));
 
       // Image files
@@ -54,7 +55,7 @@ const watch = ({
         dir.source,
         dir.asset,
         dir.image,
-        '**/*.{jpg,jpeg,gif,svg,png}'
+        gulpConfig.fileExpression.image
       ), gulp.series('image'));
 
       // inline.css
@@ -66,7 +67,6 @@ const watch = ({
       gulp.watch([
         path.join(taskTarget, '**/*.html')
       ], browserSync.reload);
-      // ], config.entry.css.inline ? gulp.series('sass', 'pug') : gulp.series('sass'));
     }
   });
 };

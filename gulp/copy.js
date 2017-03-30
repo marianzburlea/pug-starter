@@ -4,6 +4,7 @@
 // and updated to copy files like doc and docx (documents)
 
 import path from 'path';
+import gulpConfig from './util/config';
 
 const copy = ({
   gulp,
@@ -19,7 +20,7 @@ const copy = ({
       .src(path.join(
         dir.source,
         dir.asset,
-        '**/*.{doc,docx}'
+        gulpConfig.fileExpression.copy
       ))
       .pipe(plugins.changed(dest))
       .pipe(gulp.dest(dest));

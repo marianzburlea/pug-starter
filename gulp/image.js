@@ -8,6 +8,7 @@ import gifsicle from 'imagemin-gifsicle';
 import svgo from 'imagemin-svgo';
 import { getImageCollection } from './util/util';
 import mergeStream from 'merge-stream';
+import gulpConfig from './util/config';
 
 const image = ({
   gulp,
@@ -24,7 +25,7 @@ const image = ({
       source: path.join(
         dir.source,
         `_${folderName}`,
-        '**/*.{jpg,jpeg,gif,svg,png}'
+        gulpConfig.fileExpression.image
       ),
       dest: path.join(
         taskTarget,
@@ -37,7 +38,7 @@ const image = ({
     dir.source,
     dir.asset,
     dir.image,
-    '**/*.{jpg,jpeg,gif,svg,png}'
+    gulpConfig.fileExpression.image
   );
 
   gulp.task('image', () => {
