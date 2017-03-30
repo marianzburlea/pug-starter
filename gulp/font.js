@@ -1,6 +1,7 @@
 'use strict';
 
 import path from 'path';
+import gulpConfig from './util/config';
 
 const font = ({
   gulp,
@@ -17,7 +18,7 @@ const font = ({
         dir.source,
         dir.asset,
         dir.font,
-        '**/*.{otf,eot,svg,ttf,woff,woff2}'
+        gulpConfig.fileExpression.font
       ))
       .pipe(plugins.changed(dest))
       .pipe(gulp.dest(dest));

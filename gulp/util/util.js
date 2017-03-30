@@ -44,8 +44,15 @@ const getImageCollection = obj => {
   .pipe(obj.gulp.dest(obj.dest));
 };
 
+const getStaticFiles = ({staticFilePath, dest, gulp, plugins}) => {
+  return gulp
+    .src(staticFilePath)
+    .pipe(plugins.changed(dest))
+    .pipe(gulp.dest(dest));
+};
 
 export {
+  getStaticFiles,
   getJsonData,
   getImageCollection
 };

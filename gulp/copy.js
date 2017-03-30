@@ -5,6 +5,7 @@
 
 import path from 'path';
 import gulpConfig from './util/config';
+import { getStaticFiles } from './util/util';
 
 const copy = ({
   gulp,
@@ -16,14 +17,18 @@ const copy = ({
   const dest = path.join(taskTarget, dir.asset.replace(/\_/, ''));
 
   gulp.task('copy', () => {
-    return gulp
-      .src(path.join(
-        dir.source,
-        dir.asset,
-        gulpConfig.fileExpression.copy
-      ))
-      .pipe(plugins.changed(dest))
-      .pipe(gulp.dest(dest));
+    const staticFilePath = path.join(
+      dir.source,
+      dir.asset,
+      gulpConfig.fileExpression.copy
+    );
+
+    return getStaticFiles({
+      gulp,
+      staticFilePath,
+      dest,
+      plugins
+    });
   });
 };
 
