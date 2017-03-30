@@ -23,9 +23,29 @@ const getJsonData = obj => {
       }
     });
   }
-
 };
 
+const getImageCollection = obj => {
+  return obj.gulp
+  .src(obj.source)
+  .pipe(obj.plugins.debug())
+  .pipe(obj.plugins.changed(obj.dest))
+  .pipe(obj.plugins.if(
+    obj.args.production,
+    obj.plugins.imagemin([
+      obj.plugins.imagemin.gifsicle({interlaced: true}),
+      obj.jpegoptim({progressive: true, max: 85}),
+      obj.plugins.imagemin.optipng({optimizationLevel: 5}),
+      obj.plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
+    ],{
+      verbose: true
+    })
+  ))
+  .pipe(obj.gulp.dest(obj.dest));
+};
+
+
 export {
-  getJsonData
+  getJsonData,
+  getImageCollection
 };

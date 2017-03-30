@@ -28,10 +28,8 @@
     },
     "render": {
       "url": {
-        "//": "render `article` as `article.html` (true) or `/article` (false)",
-        "htmlExtensionOn": false,
-        "//": "convert all characters to lowercase",
         "//": "this is recommended to avoid Linux/Windows capitalization issue",
+        "htmlExtensionOn": false,
         "toLowercase": true
       }
     },
@@ -84,6 +82,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
+    "imagemin-jpegoptim": "^5.0.0",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
     "merge-stream": "^1.0.1",
