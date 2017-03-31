@@ -5,6 +5,7 @@ import path from 'path';
 import mergeStream from 'merge-stream';
 import { getJsonData } from './util/util';
 import { getStaticFiles } from './util/util';
+import gulpConfig from './util/config';
 
 const template = ({
   gulp,
@@ -21,14 +22,29 @@ const template = ({
 
   gulp.task('template', () => {
     let data = getJsonData({dataPath}) || {};
-    let gulpStreamCollection = templateCollection.map(folderName => {
-      inlinePath = path.join(taskTarget, folderName, '../inline.css');
-      let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
+    let gulpStaticStreamCollection = templateCollection.map(folderName => {
       let staticFilePath = path.join(
         dir.source,
         `_${folderName}`,
         gulpConfig.fileExpression.copy
       );
+      let dest = path.join(
+        taskTarget,
+        folderName
+      );
+
+      // Static files
+      return getStaticFiles({
+        gulp,
+        staticFilePath,
+        dest,
+        plugins
+      });
+    });
+
+    let gulpStreamCollection = templateCollection.map(folderName => {
+      inlinePath = path.join(taskTarget, folderName, '../inline.css');
+      let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
 
       return Object.keys(templateData)
       .filter(value => {
@@ -69,15 +85,8 @@ const template = ({
       });
     });
 
-    // Static files
-    getStaticFiles({
-      gulp,
-      staticFilePath,
-      dest,
-      plugins
-    });
 
-    return mergeStream(gulpStreamCollection);
+    return mergeStream(...gulpStreamCollection, ...gulpStaticStreamCollection);
   });
 };
 

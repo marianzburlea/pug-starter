@@ -47,6 +47,7 @@ const getImageCollection = obj => {
 const getStaticFiles = ({staticFilePath, dest, gulp, plugins}) => {
   return gulp
     .src(staticFilePath)
+    .pipe(plugins.debug())
     .pipe(plugins.changed(dest))
     .pipe(gulp.dest(dest));
 };
