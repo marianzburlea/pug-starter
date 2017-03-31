@@ -42,20 +42,22 @@ const image = ({
   );
 
   gulp.task('image', () => {
-    templateImagePathCollection.map(v => console.log(v));
-    let gulpStreamCollection = templateImagePathCollection.map(({source, dest}) => getImageCollection({
-      source,
-      gulp,
-      config,
-      plugins,
-      pngquant,
-      jpegoptim,
-      gifsicle,
-      svgo,
-      dest,
-      optipng,
-      args
-    }));
+    let gulpStreamCollection = templateImagePathCollection
+      .map(({source, dest}) => getImageCollection({
+        source,
+        gulp,
+        config,
+        plugins,
+        pngquant,
+        jpegoptim,
+        gifsicle,
+        svgo,
+        dest,
+        optipng,
+        args
+      })
+    );
+
     let assetImageCollection = getImageCollection({
       source: assetImagePath,
       gulp,
@@ -70,7 +72,7 @@ const image = ({
       args
     });
 
-    return mergeStream(assetImageCollection);
+    return mergeStream(gulpStreamCollection, assetImageCollection);
   });
 };
 

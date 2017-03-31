@@ -29,8 +29,6 @@ const watch = ({
 
       // Template
       dir.templateCollection.map(folderName => {
-        console.log(dir.templateCollection);
-        console.log(path.join(dir.source, `_${folderName}`, '**/*.json'));
         gulp.watch([
           path.join(dir.source, `_${folderName}`, '**/*.json')
         ], gulp.series('template'));

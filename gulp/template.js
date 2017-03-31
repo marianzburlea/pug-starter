@@ -62,7 +62,7 @@ const template = ({
           // Make data available to pug
           locals: {
             config,
-            debug: true,
+            // debug: true,
             data,
             template: templateData[value],
             taskTarget,
@@ -79,7 +79,6 @@ const template = ({
         .pipe(plugins.rename(
           config.render.url.htmlExtensionOn ? `${value}.html` : `${value}/index.html`
         ))
-        // .pipe(plugins.debug())
         .pipe(gulp.dest(path.join(taskTarget, folderName)))
         .on('end', browserSync.reload);
       });

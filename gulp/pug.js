@@ -36,7 +36,7 @@ const pug = ({
         // Make data available to pug
         locals: {
           config,
-          debug: true,
+          // debug: true,
           data,
           taskTarget,
           inlinePath
