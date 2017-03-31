@@ -1,5 +1,7 @@
 # Pug starter
 Starter package for pug (former jade) template based projects.
+
+***Note***: When you want to make use of the automatically loaded JSON data, *site.data* has been replaced by *data*. On top of that, in templates, JSON data can be accessed with *template* (example: *template.title* or *template.config.render*)
 ## Prerequisites
 The project requires NodeJS v.4+ and gulp v4+
 
