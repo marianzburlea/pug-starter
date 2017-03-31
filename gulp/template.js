@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import mergeStream from 'merge-stream';
 import { getJsonData } from './util/util';
+import { getStaticFiles } from './util/util';
 
 const template = ({
   gulp,
@@ -23,6 +24,11 @@ const template = ({
     let gulpStreamCollection = templateCollection.map(folderName => {
       inlinePath = path.join(taskTarget, folderName, '../inline.css');
       let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
+      let staticFilePath = path.join(
+        dir.source,
+        `_${folderName}`,
+        gulpConfig.fileExpression.copy
+      );
 
       return Object.keys(templateData)
       .filter(value => {
@@ -61,6 +67,14 @@ const template = ({
         .pipe(gulp.dest(path.join(taskTarget, folderName)))
         .on('end', browserSync.reload);
       });
+    });
+
+    // Static files
+    getStaticFiles({
+      gulp,
+      staticFilePath,
+      dest,
+      plugins
     });
 
     return mergeStream(gulpStreamCollection);
