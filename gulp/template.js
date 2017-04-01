@@ -69,6 +69,9 @@ const template = ({
             inlinePath
           }
         }))
+        .on('error', error => {
+          console.error(error);
+        })
         // Check if inline.css exists and use inlineSource to inject it
         .pipe(plugins.if(
           fs.existsSync(inlinePath),
