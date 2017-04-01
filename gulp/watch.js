@@ -30,7 +30,9 @@ const watch = ({
       // Template
       dir.templateCollection.map(folderName => {
         gulp.watch([
-          path.join(dir.source, `_${folderName}`, '**/*.json')
+          path.join(dir.source, `_${folderName}`, '**/*.json'),
+          path.join(dir.source, `_${folderName}`, 'template.pug'),
+          path.join(dir.source, '**/mixin.pug')
         ], gulp.series('template'));
       });
 
