@@ -32,6 +32,7 @@ const watch = ({
         gulp.watch([
           path.join(dir.source, `_${folderName}`, '**/*.json'),
           path.join(dir.source, `_${folderName}`, 'template.pug'),
+          path.join(dir.source, dir.layout, '**/*.pug'),
           path.join(dir.source, dir.component, 'mixin/**/*.pug')
         ], gulp.series('template'));
       });

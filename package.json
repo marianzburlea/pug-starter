@@ -18,6 +18,7 @@
       "source": "src",
       "data": "_data",
       "component": "_component",
+      "layout": "_layout",
       "asset": "_asset",
       "image": "image",
       "font": "font",
