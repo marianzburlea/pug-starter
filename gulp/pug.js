@@ -42,10 +42,12 @@ const pug = ({
           inlinePath
         }
       }))
-      // Check if inline.css exists and use inlineSource to inject it
-      .on('error', error => {
-        console.error(error);
+      .on('error', function(error) {
+        browserSync.notify(`<pre style="text-align:left">${error.message}</pre>`, 25000);
+        reload = false;
+        this.emit('end');
       })
+      // Check if inline.css exists and use inlineSource to inject it
       .pipe(plugins.if(
         fs.existsSync(inlinePath),
         plugins.inlineSource({

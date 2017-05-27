@@ -18,7 +18,7 @@ const watch = ({
     if (!args.production) {
       browserSync.init({
         server: taskTarget,
-        notify: false
+        // notify: false
       });
 
       // Pug templates
