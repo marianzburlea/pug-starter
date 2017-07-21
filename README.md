@@ -43,6 +43,10 @@ $ npm install
 ## Usage
 To run the project in development mode and open a local server that synchronizes across multiple devices use:
 ```bash
+npm start
+```
+or
+```bash
 npm run dev
 ```
 To build the project for production use:
