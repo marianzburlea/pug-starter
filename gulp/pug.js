@@ -17,7 +17,8 @@ const pug = ({
   const inlinePath = path.join(taskTarget, 'inline.css');
 
   gulp.task('pug', () => {
-    let data = getJsonData({dataPath}) || {};
+    let data = getJsonData({dataPath}) || {},
+        reload = true;
 
     return gulp
       // target pug files
@@ -55,7 +56,10 @@ const pug = ({
         })
       ))
       .pipe(gulp.dest(path.join(taskTarget)))
-      .on('end', browserSync.reload);
+      // .on('end', browserSync.reload);
+      .on('end', () => {
+        reload && browserSync.reload();
+      });
   });
 };
 
