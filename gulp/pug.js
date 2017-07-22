@@ -45,6 +45,7 @@ const pug = ({
       }))
       .on('error', function(error) {
         browserSync.notify(`<pre style="text-align:left">${error.message}</pre>`, 25000);
+        console.log(error);
         reload = false;
         this.emit('end');
       })

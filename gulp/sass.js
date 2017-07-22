@@ -41,6 +41,7 @@ const sass = ({
       .on('error', function(error) {
         plugins.sass.logError;
         browserSync.notify(`<pre style="text-align:left">${error.message}</pre>`, 25000);
+        console.log(error);
         this.emit('end');
       })
       .pipe(plugins.postcss([
