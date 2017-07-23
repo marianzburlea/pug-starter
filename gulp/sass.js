@@ -2,6 +2,7 @@
 
 import path from 'path';
 import autoprefixer from 'autoprefixer';
+import { printError } from './util/util';
 
 const sass = ({
   gulp,
@@ -40,7 +41,7 @@ const sass = ({
       }))
       .on('error', function(error) {
         plugins.sass.logError;
-        browserSync.notify(`<pre style="text-align:left">${error.message}</pre>`, 25000);
+        browserSync.notify(printError(error), 25000);
         console.log(error);
         this.emit('end');
       })
@@ -52,7 +53,9 @@ const sass = ({
             'safari 5',
             'ios 6',
             'android 4'
-          ]
+          ],
+          // turn off notification for IE grid support
+          grid: false
         })
       ]))
       .pipe(plugins.sourcemaps.write('./'))

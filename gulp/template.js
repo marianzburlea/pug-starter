@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { getJsonData } from './util/util';
+import { getJsonData, printError } from './util/util';
 
 const template = ({
   gulp,
@@ -43,8 +43,11 @@ const template = ({
         }
       }))
       // Check if inline.css exists and use inlineSource to inject it
-      .on('error', error => {
-        console.error(error);
+      .on('error', function(error) {
+        browserSync.notify(printError(error), 25000);
+        console.log(error);
+        reload = false;
+        this.emit('end');
       })
       .pipe(plugins.if(
         fs.existsSync(inlinePath),

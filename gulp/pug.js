@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { getJsonData } from './util/util';
+import { getJsonData, printError } from './util/util';
 
 const pug = ({
   gulp,
@@ -44,7 +44,7 @@ const pug = ({
         }
       }))
       .on('error', function(error) {
-        browserSync.notify(`<pre style="text-align:left">${error.message}</pre>`, 25000);
+        browserSync.notify(printError(error), 25000);
         console.log(error);
         reload = false;
         this.emit('end');

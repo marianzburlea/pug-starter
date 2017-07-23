@@ -3,6 +3,8 @@ import fs from 'fs';
 // with properties corresponding to each loaded file
 import foldero from 'foldero';
 
+const printError = error => `<h1 style="color:#c00">Error</h1><pre style="text-align:left">${error.message}</pre>`
+
 const getJsonData = obj => {
   if (fs.existsSync(obj.dataPath)) {
     // Convert directory to a JavaScript Object
@@ -51,5 +53,6 @@ const getStaticFiles = ({staticFilePath, dest, gulp, plugins}) => {
 export {
   getStaticFiles,
   getJsonData,
-  getImageCollection
+  getImageCollection,
+  printError
 };
