@@ -27,7 +27,7 @@ const template = ({
         '!' + path.join(dir.source, '{**/\_*,**/\_*/**}')
       ])
       // Only deal with files that change in the pipeline
-      .pipe(plugins.changedInPlace(taskTarget))
+      .pipe(plugins.changedInPlace({ firstPass: true }))
       .pipe(plugins.plumber())
       // compile pug to html
       .pipe(plugins.pug({
