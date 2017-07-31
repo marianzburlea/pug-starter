@@ -1,4 +1,12 @@
 # Pug starter
+## YouTube video tutorials
+
+To help you out even more I've put together some YouTube tutorials:
+
+* Install nodejs, gulp v4, git and github: https://youtu.be/A-iTEtt6SN8
+* How to make a website for free in 3 easy steps 2017 - CodeTap: https://youtu.be/YBK5ZyXHumE
+  
+
 Starter package for pug (former jade) template based projects.
 
 ***Note***: When you want to make use of the automatically loaded JSON data, *site.data* has been replaced by *data*. On top of that, in templates, JSON data can be accessed with *template* (example: *template.title* or *template.config.render*)
