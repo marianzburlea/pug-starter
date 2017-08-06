@@ -1,4 +1,12 @@
 # Pug starter
+## YouTube video tutorials
+
+To help you out even more I've put together some YouTube tutorials:
+
+* Install nodejs, gulp v4, git and github: https://youtu.be/A-iTEtt6SN8
+* How to make a website for free in 3 easy steps 2017 - CodeTap: https://youtu.be/YBK5ZyXHumE
+  
+
 Starter package for pug (former jade) template based projects.
 
 ***Note***: an boolean option **config.render.sourceFileChange** has been added to the *package.json*. The behaviour differs based on the value:
