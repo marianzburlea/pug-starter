@@ -29,6 +29,7 @@
       ]
     },
     "render": {
+      "sourceFileChange": false,
       "url": {
         "//": "this is recommended to avoid Linux/Windows capitalization issue",
         "htmlExtensionOn": false,
