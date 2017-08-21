@@ -5,11 +5,16 @@ To help you out even more I've put together some YouTube tutorials:
 
 * Install nodejs, gulp v4, git and github: https://youtu.be/A-iTEtt6SN8
 * How to make a website for free in 3 easy steps 2017 - CodeTap: https://youtu.be/YBK5ZyXHumE
+* The nightmare is finally over! HTML5 tutorial on how to build a webpage layout 2017 - CodeTap https://youtu.be/DdYC36N9z0E
+* Build HTML5 website pain free tutorial for beginners 2017 - CodeTap https://youtu.be/qCyokdeZ6jI
   
 
 Starter package for pug (former jade) template based projects.
 
-***Note***: When you want to make use of the automatically loaded JSON data, *site.data* has been replaced by *data*. On top of that, in templates, JSON data can be accessed with *template* (example: *template.title* or *template.config.render*)
+***Note***: an boolean option **config.render.sourceFileChange** has been added to the *package.json*. The behaviour differs based on the value:
+1. **true** - it renders if the source file (pug file) has been changed; This has a much much greater speed when rendering compared to the other option however it's only relevant if you make change to the current file watched by PUG. If you make a change to a file that's extended and resides in a path that contains "_", like a layout one, the change won't be reflected.
+2. **false** - it renders if any pug file has been changed and compares the output with the destination file (the HTML generated now with the previous generated HTML). This can be slower when the number of files increases.
+
 ## Prerequisites
 The project requires NodeJS v.4+ and gulp v4+
 
