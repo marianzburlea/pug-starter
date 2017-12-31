@@ -55,7 +55,7 @@ const getImageCollection = obj => {
 const fixWindows10GulpPathIssue = ({file, dest, plugins, config}) => {
   let dirList = file.dirname.split(path.sep);
   let destList = dest.split(path.sep);
-  if (dirList.length === 1) {
+  if (dirList.length === 1 && dirList[0] === config.directory.source) {
     file.dirname = '';
   }
 
