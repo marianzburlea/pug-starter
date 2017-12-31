@@ -38,6 +38,7 @@ const template = ({
         gulp,
         staticFilePath,
         dest,
+        config,
         plugins
       });
     });

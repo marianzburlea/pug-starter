@@ -26,6 +26,7 @@ const copy = ({
     return getStaticFiles({
       gulp,
       staticFilePath,
+      config,
       dest,
       plugins
     });

@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { getJsonData, printError } from './util/util';
+import { getJsonData, printError, fixWindows10GulpPathIssue } from './util/util';
 
 const pug = ({
   gulp,
@@ -68,16 +68,8 @@ const pug = ({
       ))
       // Fix for Windows 10 and gulp acting crazy
       .pipe(plugins.rename(file => {
-        let dirList = file.dirname.split(path.sep);
-        if (dirList.length === 1) {
-          file.dirname = '';
-        }
-
-        if (file.dirname.indexOf('\\') !== -1) {
-          if (dirList[0] === config.directory.source) {
-            file.dirname = dirList.slice(1).join(path.sep);
-          }
-        }
+        const dest = taskTarget;
+        fixWindows10GulpPathIssue({file, dest, plugins, config});
       }))
       .pipe(gulp.dest(path.join(taskTarget)))
       .on('end', () => {
