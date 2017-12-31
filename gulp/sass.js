@@ -2,7 +2,7 @@
 
 import path from 'path';
 import autoprefixer from 'autoprefixer';
-import { printError } from './util/util';
+import { printError, fixWindows10GulpPathIssue } from './util/util';
 
 const sass = ({
   gulp,
@@ -58,6 +58,13 @@ const sass = ({
           grid: false
         })
       ]))
+
+      // Fix for Windows 10 and gulp acting crazy
+      .pipe(plugins.rename(file => {
+        const dest = taskTarget;
+        fixWindows10GulpPathIssue({file, dest, plugins, config})
+      }))
+
       .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(taskTarget))
       .pipe(browserSync.stream({match: '**/*.css'}));
