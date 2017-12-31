@@ -27,6 +27,7 @@ const pug = ({
         // Ignore files and folders that start with "_"
         '!' + path.join(dir.source, '{**/\_*,**/\_*/**}')
       ])
+      // .pipe(plugins.debug())
       // Only deal with files that change in the pipeline
       .pipe(plugins.if(
         config.render.sourceFileChange,
@@ -65,8 +66,20 @@ const pug = ({
           rootpath: path.join(__dirname, '..')
         })
       ))
+      // Fix for Windows 10 and gulp acting crazy
+      .pipe(plugins.rename(file => {
+        let dirList = file.dirname.split(path.sep);
+        if (dirList.length === 1) {
+          file.dirname = '';
+        }
+
+        if (file.dirname.indexOf('\\') !== -1) {
+          if (dirList[0] === config.directory.source) {
+            file.dirname = dirList.slice(1).join(path.sep);
+          }
+        }
+      }))
       .pipe(gulp.dest(path.join(taskTarget)))
-      // .on('end', browserSync.reload);
       .on('end', () => {
         reload && browserSync.reload();
       });
