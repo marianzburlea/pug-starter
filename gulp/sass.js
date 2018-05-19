@@ -19,8 +19,8 @@ const sass = ({
   if (entry.css.external) {
     cssPath.push(path.join(dir.source, entry.cssExternal));
   }
-  if (entry.css.inline) {
-    cssPath.push(path.join(dir.source, entry.cssInline));
+  if (entry.css.embed) {
+    cssPath.push(path.join(dir.source, entry.cssEmbed));
   }
 
   // Compile sass

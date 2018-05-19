@@ -59,9 +59,9 @@ const watch = ({
         gulpConfig.fileExpression.image
       ), gulp.series('image'));
 
-      // inline.css
+      // embed.css
       gulp.watch([
-        path.join(taskTarget, 'inline.css')
+        path.join(taskTarget, 'embed.css')
       ], gulp.series('pug'));
 
       // HTML

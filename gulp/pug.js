@@ -14,7 +14,7 @@ const pug = ({
 }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
-  const inlinePath = path.join(taskTarget, 'inline.css');
+  const embedPath = path.join(taskTarget, 'embed.css');
 
   gulp.task('pug', () => {
     let data = getJsonData({dataPath}) || {},
@@ -50,7 +50,7 @@ const pug = ({
           // debug: true,
           data,
           taskTarget,
-          inlinePath
+          embedPath
         }
       }))
       .on('error', function(error) {
@@ -59,9 +59,9 @@ const pug = ({
         reload = false;
         this.emit('end');
       })
-      // Check if inline.css exists and use inlineSource to inject it
+      // Check if embed.css exists and use inlineSource to inject it
       .pipe(plugins.if(
-        fs.existsSync(inlinePath),
+        fs.existsSync(embedPath),
         plugins.inlineSource({
           rootpath: path.join(__dirname, '..')
         })

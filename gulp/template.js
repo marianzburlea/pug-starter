@@ -18,7 +18,7 @@ const template = ({
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
   const templateCollection = dir.templateCollection;
-  let inlinePath;
+  let embedPath;
 
   gulp.task('template', () => {
     let data = getJsonData({dataPath}) || {};
@@ -44,7 +44,7 @@ const template = ({
     });
 
     let gulpStreamCollection = templateCollection.map(folderName => {
-      inlinePath = path.join(taskTarget, folderName, '../inline.css');
+      embedPath = path.join(taskTarget, folderName, '../embed.css');
       let templateData = getJsonData({dataPath: path.join(dir.source, '_' + folderName)}) || {};
 
       return Object.keys(templateData)
@@ -67,15 +67,15 @@ const template = ({
             data,
             template: templateData[value],
             taskTarget,
-            inlinePath
+            embedPath
           }
         }))
         .on('error', error => {
           console.error(error);
         })
-        // Check if inline.css exists and use inlineSource to inject it
+        // Check if embed.css exists and use inlineSource to inject it
         .pipe(plugins.if(
-          fs.existsSync(inlinePath),
+          fs.existsSync(embedPath),
           plugins.inlineSource({
             rootpath: path.join(__dirname, '..')
           })

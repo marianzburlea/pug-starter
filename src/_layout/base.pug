@@ -5,10 +5,11 @@ html(lang="en")
     if title
       title #{title}
     if description
-      meta(content=description, name="description")
-    if config.entry.css.inline
-      link(rel="stylesheet", href=`${inlinePath}`, inline)
+      meta(content=description name="description")
+    if config.entry.css.embed
+      link(rel="stylesheet" href=`${embedPath}` inline)
   body
     block content
+    p s
 if config.entry.css.external
   link(rel="stylesheet", href="style.css")
