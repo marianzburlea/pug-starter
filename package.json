@@ -70,7 +70,7 @@
     "browser-sync": "^2.18.8",
     "eslint": "^3.16.1",
     "foldero": "^0.1.1",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^2.0.0",
     "gulp-changed-in-place": "^2.2.0",
