@@ -38,9 +38,9 @@
     },
     "entry": {
       "cssExternal": "style**.{scss,sass}",
-      "cssEmbed": "embed**.{scss,sass}",
+      "cssInline": "inline**.{scss,sass}",
       "css": {
-        "embed": true,
+        "inline": false,
         "external": true
       }
     }
@@ -62,15 +62,21 @@
   },
   "homepage": "https://github.com/marianzburlea/pug-starter#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.0.0-beta.49",
     "autoprefixer": "^6.7.5",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.1.2",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "@babel/cli": "7.0.0-beta.48",
+    "@babel/core": "7.0.0-beta.48",
+    "@babel/register": "7.0.0-beta.48",
+    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.48",
+    "@babel/preset-env": "7.0.0-beta.48",
+    "@babel/preset-flow": "7.0.0-beta.48",
+    "@babel/preset-stage-0": "7.0.0-beta.48",
+    "@babel/preset-stage-1": "7.0.0-beta.48",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "8.0.0-beta.3",
     "browser-sync": "^2.18.8",
     "eslint": "^3.16.1",
     "foldero": "^0.1.1",
-    "gulp": "^4.0.0",
+    "gulp": "4.0.0",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^2.0.0",
     "gulp-changed-in-place": "^2.2.0",
@@ -92,8 +98,5 @@
     "jstransformer-markdown-it": "^2.0.0",
     "merge-stream": "^1.0.1",
     "minimist": "^1.2.0"
-  },
-  "dependencies": {
-    "babel-cli": "^6.26.0"
   }
 }

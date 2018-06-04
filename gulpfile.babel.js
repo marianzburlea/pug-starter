@@ -15,6 +15,16 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 // Import package.json to grab and use the config property
 import packageJsonData from './package.json';
 
+import clean from './gulp/clean';
+import copy from './gulp/copy';
+import deploy from './gulp/deploy';
+import font from './gulp/font';
+import image from './gulp/image';
+import pug from './gulp/pug';
+import sass from './gulp/sass';
+import template from './gulp/template';
+import watch from './gulp/watch';
+
 const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
 const dir = config.directory;
@@ -31,17 +41,18 @@ const plugins = gulpLoadPlugins({
 });
 
 // Read all files from the gulp folder and load all gulp tasks
-fs.readdirSync('./gulp')
-  .filter(fileName => /\.(js)$/i.test(fileName))
-  .map(fileName => require(`./gulp/${fileName}`)({
-    gulp,
-    config,
-    args,
-    taskTarget,
-    plugins,
-    browserSync
-  }));
-
+// fs.readdirSync('./gulp')
+//   .filter(fileName => /\.(js)$/i.test(fileName))
+//   .map(fileName => fileName.split('.').reduce(a=>a)());
+clean({ gulp, config, args, taskTarget, plugins, browserSync });
+copy({ gulp, config, args, taskTarget, plugins, browserSync });
+deploy({ gulp, config, args, taskTarget, plugins, browserSync });
+font({ gulp, config, args, taskTarget, plugins, browserSync });
+image({ gulp, config, args, taskTarget, plugins, browserSync });
+pug({ gulp, config, args, taskTarget, plugins, browserSync });
+sass({ gulp, config, args, taskTarget, plugins, browserSync });
+template({ gulp, config, args, taskTarget, plugins, browserSync });
+watch({ gulp, config, args, taskTarget, plugins, browserSync });
 // Server task with watch
 gulp.task('dev', gulp.series(
   'clean:development',
