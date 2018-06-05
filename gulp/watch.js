@@ -20,53 +20,49 @@ const watch = ({
         server: taskTarget,
         // notify: false
       });
-
+      
       // Pug templates
       gulp.watch([
-        path.join(dir.source, '**/*.pug'),
-        path.join(dir.source, dir.data, '**/*.json')
+        `./${dir.source}/**/*.pug`,
+        `./${dir.source}/${dir.data}/**/*.json`,
       ], gulp.series('pug'));
 
       // Template
       dir.templateCollection.map(folderName => {
         gulp.watch([
-          path.join(dir.source, `_${folderName}`, '**/*.json'),
-          path.join(dir.source, `_${folderName}`, 'template.pug'),
-          path.join(dir.source, dir.layout, '**/*.pug'),
-          path.join(dir.source, dir.component, 'mixin/**/*.pug')
+          `./${dir.source}/_${folderName}/**/*.json`,
+          `./${dir.source}/_${folderName}/**/template.pug`,
+          `./${dir.source}/${dir.layout}/**/*.pug`,
+          `./${dir.source}/${dir.component}/mixin/**/*.pug`,
         ], gulp.series('template'));
       });
 
       // Sass style
       gulp.watch([
-        path.join(dir.source, '**/*.{scss,sass}'),
-        path.join(dir.source, dir.component, '**/*.{scss,sass}')
+        `./${dir.source}/**/*.{scss,sass}`,
+        `./${dir.source}/${dir.component}/**/*.{scss,sass}`,
       ], gulp.series('sass'));
 
       // Font files
-      gulp.watch(path.join(
-        dir.source,
-        dir.asset,
-        dir.font,
-        gulpConfig.fileExpression.font
-      ), gulp.series('font'));
+      gulp.watch(
+        `./${dir.source}/${dir.asset}/${dir.font}/{${gulpConfig.fileExpression.font}}`,
+        gulp.series('font')
+      );
 
       // Image files
-      gulp.watch(path.join(
-        dir.source,
-        dir.asset,
-        dir.image,
-        gulpConfig.fileExpression.image
-      ), gulp.series('image'));
+      gulp.watch(
+        `./${dir.source}/${dir.asset}/${dir.font}/{${gulpConfig.fileExpression.image}}`,
+        gulp.series('image')
+      );
 
       // embed.css
       gulp.watch([
-        path.join(taskTarget, 'embed.css')
+        `./${taskTarget}/embed.css`,
       ], gulp.series('pug'));
 
       // HTML
       gulp.watch([
-        path.join(taskTarget, '**/*.html')
+        `./${taskTarget}/**/*.html`,
       ], browserSync.reload);
     }
   });
