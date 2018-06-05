@@ -4,17 +4,21 @@
 To help you out even more I've put together some YouTube tutorials:
 
 * Install nodejs, gulp v4, git and github
+
 [![Install nodejs, gulp v4, git and github](http://img.youtube.com/vi/A-iTEtt6SN8/0.jpg)](http://www.youtube.com/watch?v=A-iTEtt6SN8)
 
 * How to make a website for free in 3 easy steps 2017
+
 [![How to make a website for free in 3 easy steps 2017 - CodeTap](http://img.youtube.com/vi/YBK5ZyXHumE/0.jpg)](http://www.youtube.com/watch?v=YBK5ZyXHumE)
 
 * The nightmare is finally over! HTML5 tutorial on how to build a webpage layout 2017
+
 [![The nightmare is finally over! HTML5 tutorial on how to build a webpage layout 2017 - CodeTap](http://img.youtube.com/vi/DdYC36N9z0E/0.jpg)](http://www.youtube.com/watch?v=DdYC36N9z0E)
 
 * Build HTML5 website pain free tutorial for beginners 2017
+
 [![Build HTML5 website pain free tutorial for beginners 2017](http://img.youtube.com/vi/qCyokdeZ6jI/0.jpg)](http://www.youtube.com/watch?v=qCyokdeZ6jI)
-  
+
 
 Starter package for pug (former jade) template based projects.
 
