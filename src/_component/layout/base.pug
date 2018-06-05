@@ -9,7 +9,10 @@ html(lang="en")
     if config.entry.css.embed
       link(rel="stylesheet" href=`${embedPath}` inline)
   body
-    block content
-    p s
+    .container
+      include ../header/header
+      .content
+        block content
+      include ../footer/footer
 if config.entry.css.external
-  link(rel="stylesheet", href="style.css")
+  link(rel="stylesheet", href="/style.css")
