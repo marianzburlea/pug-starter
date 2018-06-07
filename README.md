@@ -1,4 +1,12 @@
 # Pug starter
+## Table of contents
+* [YouTube video tutorials](#youtube-video-tutorials)
+* [Live projects built with pug-starter](#live-projects-built-with-pug-starter)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Style](#style)
+
 ## YouTube video tutorials
 
 To help you out even more I've put together some YouTube tutorials:
@@ -25,7 +33,14 @@ Starter package for pug (former jade) template based projects.
 ***Note***: an boolean option **config.render.sourceFileChange** has been added to the *package.json*. The behaviour differs based on the value:
 1. **true** - it renders if the source file (pug file) has been changed; This has a much much greater speed when rendering compared to the other option however it's only relevant if you make change to the current file watched by PUG. If you make a change to a file that's extended and resides in a path that contains "_", like a layout one, the change won't be reflected.
 2. **false** - it renders if any pug file has been changed and compares the output with the destination file (the HTML generated now with the previous generated HTML). This can be slower when the number of files increases.
-
+## Live projects built with ***pug-starter***
+If you want your project to be listed here leave a message on [CodeTap on FaceBook](https://facebook.com/codetap). You're project needs to be at least version one final (no beta / alpha or work in progress) will be accepted.
+* Author: [Marian Zburlea](https://github.com/marianzburlea)
+  + [Eat the Veggie (live)](http://codetapio.github.io/eat-the-veggie) - [Eat the Veggie (source)](https://github.com/codetapio/eat-the-veggie)
+  + [W3schools Replica (live)](http://codetapio.github.io/w3schools-replica) - [W3schools Replica (source)](https://github.com/codetapio/w3schools-replica)
+  + [My Resume (live)](http://my-resume.bitbee.uk) - [My Resume (source)](https://github.com/marianzburlea/my-resume)
+  + [Quick Blog (live)](http://quick-blog.bitbee.uk) - [Quick Blog (source)](https://github.com/marianzburlea/quick-blog)
+  + [Tesla Saves Lives (live)](http://tesla.bitbee.uk) - [Tesla Saves Lives (source)](https://github.com/marianzburlea/tesla-saves-lives)
 ## Prerequisites
 The project requires NodeJS v.4+ and gulp v4+
 
@@ -50,11 +65,6 @@ Once globally installed, gulp v4 will then need to be installed on a per-project
 $ npm rm -D gulp
 $ npm i -D gulpjs/gulp.git#4.0
 ```
-## Table of contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Style](#style)
-
 ## Installation
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 ```bash
@@ -83,11 +93,11 @@ npm run deploy
 ```
 ## Style
 
-The project supports both inline and external style sheets. You can have none, one or the other, or both of them.
+The project supports both ***embed*** and ***external*** style sheets. You can have none, one or the other, or both of them.
 
 ### Single page application style
 When you're building a single page app or website, there is no point in having the style sheets loaded from an external file and I'll explain why: the point of loading external style sheets is to allow the browser to cache those files and once you visit another web page of the same website, instead of making another request(s) for the style sheet file(s) to the server and having to download them, if there is no change, the browser will load them from the local drive. In a single page, there is no other page to go to therefore the external file technique doesn't apply.
 ### Multi page application style
-In this scenario you can have either both inline and external or just external. The most common scenario is to have only one external style sheet file to be loaded and most of the time that's just fine.
+In this scenario you can have either both ***embed*** and external or just external. The most common scenario is to have only one external style sheet file to be loaded and most of the time that's just fine.
 
-If you want to improve your SEO and user experience even further, I strongly recommend to use a combination of both inline and external. The inline style sheet should only contain the minimum amount of styles for the initial visible part of the page to render. The rest of the styles can be put in the external CSS file.
+If you want to improve your SEO and user experience even further, I strongly recommend to use a combination of both ***embed*** and external. The ***embed*** style sheet should only contain the minimum amount of styles for the initial visible part of the page to render. The rest of the styles can be put in the external CSS file.
