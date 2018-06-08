@@ -41,6 +41,9 @@ If you want your project to be listed here leave a message on [CodeTap on FaceBo
   + [My Resume (live)](http://my-resume.bitbee.uk) - [My Resume (source)](https://github.com/marianzburlea/my-resume)
   + [Quick Blog (live)](http://quick-blog.bitbee.uk) - [Quick Blog (source)](https://github.com/marianzburlea/quick-blog)
   + [Tesla Saves Lives (live)](http://tesla.bitbee.uk) - [Tesla Saves Lives (source)](https://github.com/marianzburlea/tesla-saves-lives)
+* Author: [Istvan Acs](https://github.com/St3ve89)
+  + [Acme mobile first (live)](http://St3ve89.github.io/Acme-mobile-first) - [Acme mobile first (source)](https://github.com/St3ve89/Acme-mobile-first)
+  + [Thumb Gallery (live)](http://St3ve89.github.io/thumbgallery) - [Thumb Gallery (source)](https://github.com/St3ve89/thumbgallery)
 ## Prerequisites
 The project requires NodeJS v.4+ and gulp v4+
 
