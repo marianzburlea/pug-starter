@@ -36,7 +36,7 @@ const getImageCollection = obj => {
     obj.args.production,
     obj.plugins.imagemin([
       obj.plugins.imagemin.gifsicle({interlaced: true}),
-      obj.jpegoptim({progressive: true, max: 85}),
+      obj.jpegtran({progressive: true, max: 85}),
       obj.plugins.imagemin.optipng({optimizationLevel: 5}),
       obj.plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
     ])
