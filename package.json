@@ -38,7 +38,7 @@
     },
     "entry": {
       "cssExternal": "style**.{scss,sass}",
-      "cssInline": "inline**.{scss,sass}",
+      "cssEmbed": "embed**.{scss,sass}",
       "css": {
         "embed": false,
         "external": true
