@@ -1,13 +1,21 @@
-extends _component/layout/base
-block settings
-  - title = 'Welcome to Pug Starter';
-  - description = 'Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects';
-
-block content
-  h1 Welcome to pug starter!
-  p Simple pug (jade) starter [framework] enabling faster delivery of HTML &amp; CSS projects to a private server and/or automatic deployment of GitHub pages.
-  p There are #{data.menu.length} items in the menu.
-  :markdown-it
-    # Support for markdown
-    - one
-    - two
+doctype html
+html(lang="en")
+  block settings
+  head
+    title Welcome to Pug Starter
+    meta(content="Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects" name="description")
+    //- this checks to see the the "embed" property is set to "true"
+    //- in the package.json file
+    if config.entry.css.embed
+      link(rel="stylesheet" href=`${embedPath}` inline)
+  body
+    h1 Welcome to pug-starter!
+    p This is a barebone setup.
+    p You are currently on master branch.
+    p If you want to see a full example of what pug starter offers out of the box use:
+    p 
+      b git checkout example
+//- The style.css is at the bottom so it doesn't
+//- block the loading of assets
+if config.entry.css.external
+  link(rel="stylesheet", href="/style.css")
