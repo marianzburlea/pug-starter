@@ -12,6 +12,9 @@
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {
+    "customUrl": "http://pug-starter.codetap.io",
+    "githubUrl": "http://github.com/marianzburlea/pug-starter.git",
+    "deployToGithubIo": true,
     "directory": {
       "development": "tmp",
       "production": "build",

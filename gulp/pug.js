@@ -2,6 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import url from 'url'
 import { getJsonData, printError, fixWindows10GulpPathIssue } from './util/util';
 
 const pug = ({
@@ -15,7 +16,22 @@ const pug = ({
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
   const embedPath = path.join(taskTarget, 'embed.css');
+  let baseUrl = '';
+  if (args.production) {
+    if (config.deployToGithubIo) {
+      // get the part after github.com
+      const path = url.parse(config.githubUrl).pathname.split('/');
+      // extract the authors, your GitHub username
+      const repository = path[2].split('.').reduce(a=>a);
+      // construct the link to github.io used to access the project
+      // when it's deployed on github
+      baseUrl = `/${repository}`;
+    } else {
+      baseUrl = config.customUrl;
+    }
+  }
 
+  console.log(baseUrl)
   gulp.task('pug', () => {
     let data = getJsonData({dataPath}) || {},
         reload = true;
@@ -47,6 +63,7 @@ const pug = ({
         // Make data available to pug
         locals: {
           config,
+          baseUrl,
           // debug: true,
           data,
           taskTarget,
