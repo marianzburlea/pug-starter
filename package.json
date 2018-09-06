@@ -4,11 +4,10 @@
   "description": "Simple pug (jade) starter [framework] enabling faster delivery of HTML & CSS projects to a private server and/or automatic deployment of GitHub pages.",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp dev",
-    "start": "gulp dev",
-    "prod": "gulp build --production",
-    "deploy": "gulp build --production && gulp deploy && gulp clean:ghpages",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp dev --lang=en",
+    "prod-en": "gulp build --production --lang=en",
+    "prod-ro": "gulp build --production --lang=ro",
+    "deploy": "gulp build --production && gulp deploy && gulp clean:ghpages"
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {

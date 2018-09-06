@@ -17,6 +17,9 @@ const pug = ({
   const dataPath = path.join(dir.source, dir.data);
   const embedPath = path.join(taskTarget, 'embed.css');
   let baseUrl = '';
+  if (args.lang) {
+    config.lang = args.lang;
+  }
   if (args.production) {
     if (config.deployToGithubIo) {
       // get the part after github.com
