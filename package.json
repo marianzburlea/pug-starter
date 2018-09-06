@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp dev --lang=en",
+    "prod": "npm run prod-en",
     "prod-en": "gulp build --production --lang=en",
     "prod-ro": "gulp build --production --lang=ro",
-    "deploy": "gulp build --production && gulp deploy && gulp clean:ghpages"
+    "deploy": "gulp build --production --lang=en && gulp deploy && gulp clean:ghpages"
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {
