@@ -36,9 +36,9 @@ img(alt="Awesome dog" width="100" href=`${baseUrl}/image/cool-dog.jpg`)
 
 To help you out even more I've put together some YouTube tutorials:
 
-* Install nodejs, gulp v4, git and github
+* Install nodejs, git and github
 
-[![Install nodejs, gulp v4, git and github](http://img.youtube.com/vi/A-iTEtt6SN8/0.jpg)](http://www.youtube.com/watch?v=A-iTEtt6SN8)
+[![Install nodejs, git and github](http://img.youtube.com/vi/A-iTEtt6SN8/0.jpg)](http://www.youtube.com/watch?v=A-iTEtt6SN8)
 
 * How to make a website for free in 3 easy steps 2017
 
@@ -70,29 +70,10 @@ If you want your project to be listed here leave a message on [CodeTap on FaceBo
   + [Acme mobile first (live)](http://St3ve89.github.io/Acme-mobile-first) - [Acme mobile first (source)](https://github.com/St3ve89/Acme-mobile-first)
   + [Thumb Gallery (live)](http://St3ve89.github.io/thumbgallery) - [Thumb Gallery (source)](https://github.com/St3ve89/thumbgallery)
 ## Prerequisites
-The project requires NodeJS v.4+ and gulp v4+
+The project requires NodeJS v.4+
 
-To install NodeJS visit [nodejs download page](https://nodejs.org/en/download/)
-### Install gulp v4 globally
-```bash
-$ npm i -g gulp-cli
-```
-#### If you already have gulp v3 or lower installed
-```bash
-$ npm rm -g gulp
-$ npm i -g gulp-cli
-```
-To verify what version you have installed globally, you can run the below command (and should see a similar output)
-```bash
-$ gulp -v
-CLI version 1.2.1
-```
-### Install gulp 4 locally
-Once globally installed, gulp v4 will then need to be installed on a per-project basis.
-```bash
-$ npm rm -D gulp
-$ npm i -D gulpjs/gulp.git#4.0
-```
+To install NodeJS visit [nodejs download page](https://nodejs.org/en/download/) download the appropiate package for your operatin system, click on the downloaded file, open it and follow the installation procees. If you don't know much about it, just click ALL the NEXT and or INSTALL buttons and choose "I agree" when prompted and you should be fine.
+
 ## Installation
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 ```bash
