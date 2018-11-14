@@ -55,6 +55,13 @@ const watch = ({
         gulp.series('image')
       );
 
+      // copy files
+      console.log(`./${dir.source}/${dir.asset}/{${gulpConfig.fileExpression.copy}}`)
+      gulp.watch(
+        `./${dir.source}/${dir.asset}/${gulpConfig.fileExpression.copy}`,
+        gulp.series('copy', browserSync.reload)
+      );
+
       // embed.css
       gulp.watch([
         `./${taskTarget}/embed.css`,
