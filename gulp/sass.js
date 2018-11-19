@@ -13,8 +13,8 @@ const sass = ({
   browserSync
 }) => {
   const dir = config.directory;
-  const entry = config.entry;
-  const cssPath = [];
+  const { entry } = config;
+  let cssPath = [];
 
   if (entry.css.external) {
     cssPath.push(path.join(dir.source, entry.cssExternal));
@@ -22,6 +22,16 @@ const sass = ({
   if (entry.css.embed) {
     cssPath.push(path.join(dir.source, entry.cssEmbed));
   }
+
+  if (entry.cssModular) {
+    cssPath = [
+      `./${dir.source}/**/*.{scss,sass}`,
+      `!./${dir.source}/**/\_*.{scss,sass}`
+    ]
+  }
+
+  console.log('modularCss, cssPath, dir.source')
+  console.log(JSON.stringify(entry.cssModular), cssPath, dir.source)
 
   // Compile sass
   gulp.task('sass', () => {
