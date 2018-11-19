@@ -14,7 +14,7 @@ html(lang="en")
     p If you want to see a full example of what pug starter offers out of the box use:
     p 
       b git checkout example
-//- The style.css is at the bottom so it doesn't
-//- block the loading of assets
-if config.entry.css.external
-  link(rel="stylesheet", href=`${baseUrl}/style.css`)
+    //- The style.css is at the bottom so it doesn't
+    //- block the loading of assets
+    if config.entry.css.external
+      link(rel="stylesheet", href=`${baseUrl}/style.css`)
