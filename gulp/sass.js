@@ -30,9 +30,6 @@ const sass = ({
     ]
   }
 
-  console.log('modularCss, cssPath, dir.source')
-  console.log(JSON.stringify(entry.cssModular), cssPath, dir.source)
-
   // Compile sass
   gulp.task('sass', () => {
     return gulp.src(cssPath)

@@ -34,7 +34,6 @@ const pug = ({
     }
   }
 
-  console.log(baseUrl)
   gulp.task('pug', () => {
     let data = getJsonData({dataPath}) || {},
         reload = true;
