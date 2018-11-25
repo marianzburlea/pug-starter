@@ -17,6 +17,7 @@ import packageJsonData from './package.json';
 
 import clean from './gulp/clean';
 import copy from './gulp/copy';
+import copyIcon from './gulp/copy-icon';
 import deploy from './gulp/deploy';
 import font from './gulp/font';
 import image from './gulp/image';
@@ -46,6 +47,7 @@ const plugins = gulpLoadPlugins({
 //   .map(fileName => fileName.split('.').reduce(a=>a)());
 clean({ gulp, config, args, taskTarget, plugins, browserSync });
 copy({ gulp, config, args, taskTarget, plugins, browserSync });
+copyIcon({ gulp, config, args, taskTarget, plugins, browserSync });
 deploy({ gulp, config, args, taskTarget, plugins, browserSync });
 font({ gulp, config, args, taskTarget, plugins, browserSync });
 image({ gulp, config, args, taskTarget, plugins, browserSync });
@@ -70,6 +72,7 @@ gulp.task('build', gulp.series(
   'clean:production',
   'font',
   'copy',
+  'copyIcon',
   'image',
   'sass',
   'pug',
