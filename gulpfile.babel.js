@@ -60,6 +60,7 @@ gulp.task('dev', gulp.series(
   'clean:development',
   'font',
   'copy',
+  'copyIcon',
   'image',
   'sass',
   'pug',
