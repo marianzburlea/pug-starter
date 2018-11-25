@@ -73,7 +73,7 @@ const sass = ({
       }))
 
       .pipe(plugins.sourcemaps.write('./'))
-      .pipe(gulp.dest(taskTarget))
+      .pipe(gulp.dest(taskTarget.replace(/\_/, '')))
       .pipe(browserSync.stream({match: '**/*.css'}));
   });
 };
