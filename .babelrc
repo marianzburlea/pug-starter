@@ -1,11 +1,10 @@
 {
   "presets": [
-    ["@babel/preset-env",{
-      "targets": {
-        "modules": false,
-        "useBuiltIns": "entry",
-        "browserslist": ["> 2%", "ie 11", "safari >= 9"]
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
       }
-    }]
+    ]
   ]
 }
