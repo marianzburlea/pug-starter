@@ -3,7 +3,7 @@
 // GUlp is a simple platform-agnostic toolkit that helps you automate painful
 // and time-consuming tasks in your workflow
 import gulp from 'gulp';
-import fs from 'fs';
+import gulpEslint from 'gulp-eslint'
 // browser-sync - Live CSS Reload & Browser Syncing
 import browserSyncLib from 'browser-sync';
 // minimist - argument parser without all the fanciful decoration
@@ -45,16 +45,17 @@ const plugins = gulpLoadPlugins({
 // fs.readdirSync('./gulp')
 //   .filter(fileName => /\.(js)$/i.test(fileName))
 //   .map(fileName => fileName.split('.').reduce(a=>a)());
-clean({ gulp, config, args, taskTarget, plugins, browserSync });
-copy({ gulp, config, args, taskTarget, plugins, browserSync });
-copyIcon({ gulp, config, args, taskTarget, plugins, browserSync });
-deploy({ gulp, config, args, taskTarget, plugins, browserSync });
-font({ gulp, config, args, taskTarget, plugins, browserSync });
-image({ gulp, config, args, taskTarget, plugins, browserSync });
-pug({ gulp, config, args, taskTarget, plugins, browserSync });
-sass({ gulp, config, args, taskTarget, plugins, browserSync });
-template({ gulp, config, args, taskTarget, plugins, browserSync });
-watch({ gulp, config, args, taskTarget, plugins, browserSync });
+const taskOptionList = { gulp, config, args, taskTarget, plugins, browserSync, gulpEslint }
+clean(taskOptionList);
+copy(taskOptionList);
+copyIcon(taskOptionList);
+deploy(taskOptionList);
+font(taskOptionList);
+image(taskOptionList);
+pug(taskOptionList);
+sass(taskOptionList);
+template(taskOptionList);
+watch(taskOptionList);
 // Server task with watch
 gulp.task('dev', gulp.series(
   'clean:development',
