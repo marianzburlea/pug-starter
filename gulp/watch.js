@@ -18,7 +18,8 @@ const watch = ({
     if (!args.production) {
       browserSync.init({
         server: taskTarget,
-        // notify: false
+        notify: false,
+        plugins: ['bs-eslint-message']
       });
       
       // Pug templates

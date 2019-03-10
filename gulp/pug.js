@@ -38,6 +38,11 @@ const pug = ({
     let data = getJsonData({dataPath}) || {},
         reload = true;
 
+    browserSync.sockets.emit("msg", {
+      title: `<div style="font-size: 3rem; text-align-center">Rerefshing web page</div>`,
+      body: `<h1 style="color: black; font-size: 2rem">as you've made changes <br>to your PUG file 💃</h1>`
+    });
+
     return gulp
       // target pug files
       .src([
