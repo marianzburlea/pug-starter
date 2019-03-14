@@ -9,7 +9,11 @@ html(lang="en")
       link(rel="stylesheet" href=`${embedPath}` inline)
   body
     h1 Welcome to pug-starter! #{config.lang} :)
-    p This is a barebone setup.
+    p This is a barebone setup.!
+    pre=JSON.stringify(data, null, 2)
+    pre=JSON.stringify(name, null, 2)
+    p=student
+
     p You are currently on master branch.
     p If you want to see a full example of what pug starter offers out of the box use:
     p 
