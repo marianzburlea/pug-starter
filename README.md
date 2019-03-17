@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif) ![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif) ![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif)
+![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif) t![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif) t![](https://raw.githubusercontent.com/marianzburlea/pug-starter/master/gulp/arrow-flashing.gif)
 
 # Pug starter
 
