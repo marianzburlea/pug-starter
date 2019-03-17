@@ -3,38 +3,29 @@ import path from "path";
 // foldero - will load files from the folder you specify and construct an object
 // with properties corresponding to each loaded file
 import foldero from "foldero";
+import jsYaml from "js-yaml";
 
 const printError = error =>
   `<h1 style="color:#c00">Error</h1><pre style="text-align:left">${
     error.message
   }</pre>`;
 
-export const getFileNameList = dataPath =>
-  fs.existsSync(dataPath)
-    ? fs
-        .readdirSync(dataPath, { withFileTypes: true })
-        .filter(name =>
-          ["yml", "yaml"].includes(
-            name
-              .split(".")
-              .reverse()
-              .reduce(a => a)
-              .toLowerCase()
-          )
-        )
-        .map(f => `${dataPath}/${f}`)
-    : [];
-
 const getJsonData = obj => {
   if (fs.existsSync(obj.dataPath)) {
     // Convert directory to a JavaScript Object
     return foldero(obj.dataPath, {
       recurse: true,
-      whitelist: "(.*/)*.json$",
+      // prettier-ignore
+      whitelist: "(.*/)*.+\.(json|ya?ml)$",
       loader: file => {
         let json = {};
+
         try {
-          json = JSON.parse(fs.readFileSync(file, "utf8"));
+          if (path.extname(file).match(/^.ya?ml$/)) {
+            json = jsYaml.safeLoad(fs.readFileSync(file, "utf8"));
+          } else {
+            json = JSON.parse(fs.readFileSync(file, "utf8"));
+          }
         } catch (e) {
           console.log(`Error parsing data file: ${file}`);
           console.log(e);
