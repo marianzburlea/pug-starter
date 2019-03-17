@@ -100,10 +100,10 @@
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
-    "gulp-yaml-data": "0.2.0",
     "imagemin-jpegoptim": "5.0.0",
     "imagemin-pngquant": "5.0.0",
     "imagemin-svgo": "5.2.0",
+    "js-yaml": "3.12.2",
     "jstransformer-markdown-it": "2.1.0",
     "merge-stream": "1.0.1",
     "minimist": "1.2.0"

@@ -6,8 +6,7 @@ import url from "url";
 import {
   getJsonData,
   printError,
-  fixWindows10GulpPathIssue,
-  getFileNameList
+  fixWindows10GulpPathIssue
 } from "./util/util";
 
 const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
@@ -66,12 +65,6 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
           )
         )
         .pipe(plugins.plumber())
-        .pipe(
-          plugins.yamlData({
-            property: "data",
-            src: getFileNameList(dataPath)
-          })
-        )
         // compile pug to html
         .pipe(
           plugins.pug({

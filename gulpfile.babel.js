@@ -3,7 +3,6 @@
 // GUlp is a simple platform-agnostic toolkit that helps you automate painful
 // and time-consuming tasks in your workflow
 import gulp from "gulp";
-import gulpEslint from "gulp-eslint";
 // browser-sync - Live CSS Reload & Browser Syncing
 import browserSyncLib from "browser-sync";
 // minimist - argument parser without all the fanciful decoration
