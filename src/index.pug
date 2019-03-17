@@ -8,16 +8,9 @@ html(lang="en")
     if config.entry.css.embed
       link(rel="stylesheet" href=`${embedPath}` inline)
   body
-    h1 Welcome to pug-starter! #{config.lang} :)
+    h1 Welcome #[span #{name}]!
     p This is a barebone setup.!
-    pre=JSON.stringify(data, null, 2)
-    pre=JSON.stringify(name, null, 2)
-    p=student
 
-    p You are currently on master branch.
-    p If you want to see a full example of what pug starter offers out of the box use:
-    p 
-      b git checkout example
     //- The style.css is at the bottom so it doesn't
     //- block the loading of assets
     if config.entry.css.external

@@ -6,7 +6,8 @@ import url from "url";
 import {
   getJsonData,
   printError,
-  fixWindows10GulpPathIssue
+  fixWindows10GulpPathIssue,
+  getFileNameList
 } from "./util/util";
 
 const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
@@ -68,20 +69,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
         .pipe(
           plugins.yamlData({
             property: "data",
-            src: fs
-              .readdirSync(dataPath, { withFileTypes: true })
-              .filter(i => !i.isDirectory())
-              .map(f => f.name)
-              .filter(name =>
-                ["yml", "yaml"].includes(
-                  name
-                    .split(".")
-                    .reverse()
-                    .reduce(a => a)
-                    .toLowerCase()
-                )
-              )
-              .map(f => `${dataPath}/${f}`)
+            src: getFileNameList(dataPath)
           })
         )
         // compile pug to html
