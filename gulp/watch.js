@@ -48,17 +48,20 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
 
       // Font files
       gulp.watch(
-        `./${dir.source}/${dir.asset}/${dir.font}/{${
+        `./${dir.source}/${dir.asset}/${dir.font}/${
           gulpConfig.fileExpression.font
-        }}`,
+        }`,
         gulp.series("font")
       );
 
       // Image files
+      console.log(`./${dir.source}/${dir.asset}/${dir.image}/{${
+        gulpConfig.fileExpression.image
+      }}`)
       gulp.watch(
-        `./${dir.source}/${dir.asset}/${dir.font}/{${
+        `./${dir.source}/${dir.asset}/${dir.image}/${
           gulpConfig.fileExpression.image
-        }}`,
+        }`,
         gulp.series("image")
       );
 
