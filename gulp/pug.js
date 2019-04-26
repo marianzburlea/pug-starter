@@ -1,29 +1,30 @@
-"use strict";
+'use strict';
 
-import fs from "fs";
-import path from "path";
-import url from "url";
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
 import {
   getJsonData,
   printError,
   fixWindows10GulpPathIssue,
-  printCompile
-} from "./util/util";
+  printCompile,
+  logError
+} from './util/util';
 
 const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
-  const embedPath = path.join(taskTarget, "embed.css");
-  let baseUrl = "";
+  const embedPath = path.join(taskTarget, 'embed.css');
+  let baseUrl = '';
   if (args.lang) {
     config.lang = args.lang;
   }
   if (args.production) {
     if (config.deployToGithubIo) {
       // get the part after github.com
-      const path = url.parse(config.githubUrl).pathname.split("/");
+      const path = url.parse(config.githubUrl).pathname.split('/');
       // extract the authors, your GitHub username
-      const repository = path[2].split(".").reduce(a => a);
+      const repository = path[2].split('.').reduce(a => a);
       // construct the link to github.io used to access the project
       // when it's deployed on github
       baseUrl = `/${repository}`;
@@ -32,30 +33,29 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
     }
   }
 
-  gulp.task("pug", () => {
-    console.clear();
-    printCompile(compileMode)
+  gulp.task('pug', () => {
+    printCompile(compileMode);
     let data = getJsonData({ dataPath }) || {},
       reload = true;
 
-    browserSync.sockets.emit("msg", {
-      title: `<div style="font-size: 3rem; text-align-center">Rerefshing web page</div>`,
-      body: `<h1 style="color: black; font-size: 2rem">as you've made changes <br>to your PUG file 💃</h1>`
+    browserSync.sockets.emit('msg', {
+      title: `<div style='font-size: 3rem; text-align-center'>Rerefshing web page</div>`,
+      body: `<h1 style='color: black; font-size: 2rem'>as you've made changes <br>to your PUG file 💃</h1>`
     });
 
     return (
       gulp
         // target pug files
         .src([
-          path.join(dir.source, "**/*.pug"),
-          // Ignore files and folders that start with "_"
-          "!" + path.join(dir.source, "{**/_*,**/_*/**}")
+          path.join(dir.source, '**/*.pug'),
+          // Ignore files and folders that start with '_'
+          '!' + path.join(dir.source, '{**/_*,**/_*/**}')
         ])
         // .pipe(plugins.debug())
         // Only deal with files that change in the pipeline
         .pipe(
           plugins.if(
-            config.render.sourceFileChange,
+            compileMode === 'current',
             plugins.changedInPlace({ firstPass: true })
           )
         )
@@ -63,7 +63,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
         // the output with the destination file
         .pipe(
           plugins.if(
-            !config.render.sourceFileChange,
+            compileMode === 'all',
             plugins.changed(taskTarget)
           )
         )
@@ -84,18 +84,18 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
             }
           })
         )
-        .on("error", function(error) {
+        .on('error', function(error) {
           browserSync.notify(printError(error), 25000);
-          console.log(error);
           reload = false;
-          this.emit("end");
+          this.emit('end');
+          logError(error.name, error.message);
         })
         // Check if embed.css exists and use inlineSource to inject it
         .pipe(
           plugins.if(
             fs.existsSync(embedPath),
             plugins.inlineSource({
-              rootpath: path.join(__dirname, "..")
+              rootpath: path.join(__dirname, '..')
             })
           )
         )
@@ -107,7 +107,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
           })
         )
         .pipe(gulp.dest(path.join(taskTarget)))
-        .on("end", () => {
+        .on('end', () => {
           reload && browserSync.reload();
         })
     );

@@ -24,12 +24,14 @@ import pug from './gulp/pug';
 import sass from './gulp/sass';
 import template from './gulp/template';
 import watch from './gulp/watch';
+import { printCompile } from './gulp/util/util.js';
+
+global.compileMode = 'all';
 
 const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
 const dir = config.directory;
 const taskTarget = args.production ? dir.production : dir.development;
-let compileMode = 'all';
 
 // Create a new browserSync instance
 const browserSync = browserSyncLib.create();
@@ -96,15 +98,23 @@ const readline = require('readline');
 readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 process.stdin.on('keypress', (str, key) => {
+  if (key.name === 'a') {
+    compileMode = 'all';
+  }
+  if (key.name === 'c') {
+    compileMode = 'current';
+  }
   if (key.ctrl && key.name === 'c') {
     process.exit();
+    console.clear();
   } 
   else {
     // compile all
-    console.clear();
-    console.log(`You pressed the '${str}' key`);
-    console.log();
-    console.log(key);
+    // console.clear();
+    // console.log(`You pressed the '${str}' key`);
+    // console.log();
+    // console.log(key);
   }
+  printCompile(compileMode);
 });
 console.log('Any key here: ');

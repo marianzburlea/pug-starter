@@ -2,7 +2,7 @@
 
 import path from 'path';
 import autoprefixer from 'autoprefixer';
-import { printError, fixWindows10GulpPathIssue } from './util/util';
+import { printError, fixWindows10GulpPathIssue, printCompile } from './util/util';
 
 const sass = ({
   gulp,
@@ -32,6 +32,7 @@ const sass = ({
 
   // Compile sass
   gulp.task('sass', () => {
+    printCompile(compileMode);
     return gulp.src(cssPath)
       // Only deal with files that change in the pipeline
       .pipe(plugins.plumber())
