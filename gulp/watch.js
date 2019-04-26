@@ -1,18 +1,19 @@
-"use strict";
+'use strict';
 
-import path from "path";
-import gulpConfig from "./util/config";
+import path from 'path';
+import gulpConfig from './util/config';
 
 const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
   const dir = config.directory;
 
   // Gulp watch task
-  gulp.task("watch", () => {
+  gulp.task('watch', () => {
+    console.clear();
     if (!args.production) {
       browserSync.init({
         server: taskTarget,
         notify: false,
-        plugins: ["bs-eslint-message"]
+        plugins: ['bs-eslint-message']
       });
 
       // Pug templates
@@ -21,7 +22,7 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
           `./${dir.source}/**/*.pug`,
           `./${dir.source}/${dir.data}/**/*.{json,yml,yaml}`
         ],
-        gulp.series("pug")
+        gulp.series('pug')
       );
 
       // Template
@@ -33,7 +34,7 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
             `./${dir.source}/${dir.layout}/**/*.pug`,
             `./${dir.source}/${dir.component}/mixin/**/*.pug`
           ],
-          gulp.series("template")
+          gulp.series('template')
         );
       });
 
@@ -43,7 +44,7 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
           `./${dir.source}/**/*.{scss,sass}`,
           `./${dir.source}/${dir.component}/**/*.{scss,sass}`
         ],
-        gulp.series("sass")
+        gulp.series('sass')
       );
 
       // Font files
@@ -51,28 +52,25 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
         `./${dir.source}/${dir.asset}/${dir.font}/${
           gulpConfig.fileExpression.font
         }`,
-        gulp.series("font")
+        gulp.series('font')
       );
 
       // Image files
-      console.log(`./${dir.source}/${dir.asset}/${dir.image}/{${
-        gulpConfig.fileExpression.image
-      }}`)
       gulp.watch(
         `./${dir.source}/${dir.asset}/${dir.image}/${
           gulpConfig.fileExpression.image
         }`,
-        gulp.series("image")
+        gulp.series('image')
       );
 
       // copy files
       gulp.watch(
         `./${dir.source}/${dir.asset}/${gulpConfig.fileExpression.copy}`,
-        gulp.series("copy", browserSync.reload)
+        gulp.series('copy', browserSync.reload)
       );
 
       // embed.css
-      gulp.watch([`./${taskTarget}/embed.css`], gulp.series("pug"));
+      gulp.watch([`./${taskTarget}/embed.css`], gulp.series('pug'));
 
       // HTML
       gulp.watch([`./${taskTarget}/**/*.html`], browserSync.reload);

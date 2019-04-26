@@ -5,6 +5,10 @@ import path from "path";
 import foldero from "foldero";
 import jsYaml from "js-yaml";
 
+export const printCompile = (value) => {
+  console.log(`You are currently compiling ${value}`)
+}
+
 const printError = error =>
   `<h1 style="color:#c00">Error</h1><pre style="text-align:left">${
     error.message

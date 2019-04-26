@@ -6,7 +6,8 @@ import url from "url";
 import {
   getJsonData,
   printError,
-  fixWindows10GulpPathIssue
+  fixWindows10GulpPathIssue,
+  printCompile
 } from "./util/util";
 
 const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
@@ -32,6 +33,8 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
   }
 
   gulp.task("pug", () => {
+    console.clear();
+    printCompile(compileMode)
     let data = getJsonData({ dataPath }) || {},
       reload = true;
 

@@ -1,34 +1,35 @@
-"use strict";
+'use strict';
 
 // GUlp is a simple platform-agnostic toolkit that helps you automate painful
 // and time-consuming tasks in your workflow
-import gulp from "gulp";
+import gulp from 'gulp';
 // browser-sync - Live CSS Reload & Browser Syncing
-import browserSyncLib from "browser-sync";
+import browserSyncLib from 'browser-sync';
 // minimist - argument parser without all the fanciful decoration
-import minimist from "minimist";
+import minimist from 'minimist';
 // gulp-load-plugins - Loads gulp plugins from package dependencies and attaches
 // them to an object of your choice.
-import gulpLoadPlugins from "gulp-load-plugins";
+import gulpLoadPlugins from 'gulp-load-plugins';
 
 // Import package.json to grab and use the config property
-import packageJsonData from "./package.json";
+import packageJsonData from './package.json';
 
-import clean from "./gulp/clean";
-import copy from "./gulp/copy";
-import copyIcon from "./gulp/copy-icon";
-import deploy from "./gulp/deploy";
-import font from "./gulp/font";
-import image from "./gulp/image";
-import pug from "./gulp/pug";
-import sass from "./gulp/sass";
-import template from "./gulp/template";
-import watch from "./gulp/watch";
+import clean from './gulp/clean';
+import copy from './gulp/copy';
+import copyIcon from './gulp/copy-icon';
+import deploy from './gulp/deploy';
+import font from './gulp/font';
+import image from './gulp/image';
+import pug from './gulp/pug';
+import sass from './gulp/sass';
+import template from './gulp/template';
+import watch from './gulp/watch';
 
 const config = Object.assign({}, packageJsonData.config);
 const args = minimist(process.argv.slice(2));
 const dir = config.directory;
 const taskTarget = args.production ? dir.production : dir.development;
+let compileMode = 'all';
 
 // Create a new browserSync instance
 const browserSync = browserSyncLib.create();
@@ -57,36 +58,53 @@ template(taskOptionList);
 watch(taskOptionList);
 // Server task with watch
 gulp.task(
-  "dev",
+  'dev',
   gulp.series(
-    "clean:development",
-    "font",
-    "copy",
-    "copyIcon",
-    "image",
-    "sass",
-    "pug",
-    "template",
-    "watch"
+    'clean:development',
+    'font',
+    'copy',
+    'copyIcon',
+    'image',
+    'sass',
+    'pug',
+    'template',
+    'watch'
   )
 );
 
 // Build production ready code
 gulp.task(
-  "build",
+  'build',
   gulp.series(
-    "clean:production",
-    "font",
-    "copy",
-    "copyIcon",
-    "image",
-    "sass",
-    "pug",
-    "template"
+    'clean:production',
+    'font',
+    'copy',
+    'copyIcon',
+    'image',
+    'sass',
+    'pug',
+    'template'
   )
 );
 
 // Default gulp task
-gulp.task("default", () => {
-  console.log("Default gulp task");
+gulp.task('default', () => {
+  console.log('Default gulp task');
 });
+
+const readline = require('readline');
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+process.stdin.on('keypress', (str, key) => {
+  if (key.ctrl && key.name === 'c') {
+    process.exit();
+  } 
+  else {
+    // compile all
+    console.clear();
+    console.log(`You pressed the '${str}' key`);
+    console.log();
+    console.log(key);
+  }
+});
+console.log('Any key here: ');
