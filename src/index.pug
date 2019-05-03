@@ -8,7 +8,7 @@ html(lang="en")
     if config.entry.css.embed
       link(rel="stylesheet" href=`${embedPath}` inline)
   body
-    h1 123Welcome #[span #{data.user.name}]!
+    h1 Welcome #[span #{data.user.name}]!
     p This is a barebone setup.!
     p=data.site.message
 
