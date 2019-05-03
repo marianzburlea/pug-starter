@@ -1,3 +1,6 @@
 {
-  "name": "Marian Zburlea"
+  "name": {
+    "first": "Web",
+    "last": "Developer"
+  }
 }
