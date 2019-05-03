@@ -1,8 +1,2 @@
-// @import '_component/config/color';
-// @import '_component/config/typography';
-// @import '_component/layout/layout';
-// @import '_component/header/header';
-// @import '_component/footer/footer';
-h1 span {
-  color: dodgerblue;
-}
+@import '_component/layout/general';
+@import '_component/intro/intro';
