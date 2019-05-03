@@ -15,7 +15,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
   const embedPath = path.join(taskTarget, 'embed.css');
-  let baseUrl = '';
+  let baseUrl = '/';
   if (args.lang) {
     config.lang = args.lang;
   }
@@ -27,9 +27,10 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
       const repository = path[2].split('.').reduce(a => a);
       // construct the link to github.io used to access the project
       // when it's deployed on github
-      baseUrl = `/${repository}`;
-    } else {
-      baseUrl = config.customUrl;
+      baseUrl = `/${repository}/`;
+    }
+    else {
+      baseUrl = `${config.customUrl}/`;
     }
   }
 
