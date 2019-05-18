@@ -1,6 +1,6 @@
 {
   "name": "pug-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple pug (jade) starter [framework] enabling faster delivery of HTML & CSS projects to a private server and/or automatic deployment of GitHub pages.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "prod": "npm run prod-en",
     "prod-en": "gulp build --production --lang=en",
     "prod-ro": "gulp build --production --lang=ro",
-    "deploy": "gulp build --production --lang=en && gulp deploy && gulp clean:ghpages"
+    "deploy": "gulp build --production --lang=en && gulp deploy && gulp clean:ghpages",
+    "release": "standard-version"
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {
@@ -108,6 +109,7 @@
     "jstransformer-markdown-it": "2.1.0",
     "merge-stream": "1.0.1",
     "minimist": "1.2.0",
-    "pngquant-bin": "3.1.1"
+    "pngquant-bin": "3.1.1",
+    "standard-version": "^6.0.1"
   }
 }
