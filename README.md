@@ -45,6 +45,8 @@ img(alt="Awesome dog" width="100" href=`${baseUrl}/image/cool-dog.jpg`)
 
 ## YouTube video tutorials
 
+I want to change those tutorials to new ones using the new techniques.
+
 To help you out even more I've put together some YouTube tutorials:
 
 - Install nodejs, git and github
