@@ -23,7 +23,7 @@ const deploy = ({
       }))
       .pipe(plugins.ghPages())
       .pipe(() => {
-        process.exit(1)
+        process.exit(0)
       });
   });
 };

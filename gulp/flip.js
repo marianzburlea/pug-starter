@@ -34,7 +34,7 @@ const flip = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
     }
 
     fs.renameSync(`${dir.production}-haha`, dir.production)
-    process.exit(1)
+    process.exit(0)
     return (
       gulp
     );
