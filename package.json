@@ -49,7 +49,8 @@
         "embed": true,
         "external": false
       }
-    }
+    },
+    "autoLaunchBrowser": false
   },
   "repository": {
     "type": "git",
