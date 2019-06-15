@@ -7,7 +7,7 @@ import jsYaml from 'js-yaml';
 import chalk from 'chalk';
 
 export const printCompile = (value) => {
-  console.clear();
+  // console.clear();
   console.log(chalk.yellow('You are currently compiling ') + chalk.inverse(value));
 };
 
