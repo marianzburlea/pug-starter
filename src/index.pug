@@ -6,7 +6,7 @@ html(lang="en")
     //- this checks to see the the "embed" property is set to "true"
     //- in the package.json file
     if config.entry.css.embed
-      link(rel="stylesheet" href=`${embedPath}` inline)
+      link(rel="stylesheet" href=`${embedPath}` embed)
   body
     .content
       include _component/intro/intro

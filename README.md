@@ -13,6 +13,20 @@
 
 ## **baseUrl**
 
+Note: `inline` attribute has been updated to `embed`
+
+Old way:
+```
+if config.entry.css.embed
+  link(rel="stylesheet" href=`${embedPath}` inline)
+```
+
+New way:
+```
+if config.entry.css.embed
+  link(rel="stylesheet" href=`${embedPath}` embed)
+```
+
 add **_modularCss_** support. When enabled in the config of `package.json` it will convert all SCSS/SASS files to its correspondent CSS path.
 
 add **_baseurl_** support which can be configured for GitHub.io and custom domain. Check _package.json_ config section for
