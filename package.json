@@ -10,7 +10,8 @@
     "prod-en": "gulp build --production --lang=en",
     "prod-ro": "gulp build --production --lang=ro",
     "deploy": "gulp build --production --lang=en && gulp deploy && gulp clean:ghpages",
-    "release": "standard-version"
+    "release": "standard-version",
+    "update": "git pull && npm run prod"
   },
   "//": "CUSTOM CONFIGURATION",
   "config": {
