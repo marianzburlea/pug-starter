@@ -27,17 +27,14 @@ const flip = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
     // I want to rename folders, how do I do that?
     // mv current-name new-name
     const newName = new Date().toISOString().split(':').join('--')
-    console.log(newName)
 
     // check if production exists
     if (fs.existsSync(dir.production)) {
-      console.log('duddu. it is here')
       fs.renameSync(dir.production, `${dir.production}-${newName}`)
     }
 
     fs.renameSync(`${dir.production}-haha`, dir.production)
-
-    console.log('This is the FLIP', +new Date())
+    process.exit(1)
     return (
       gulp
     );
