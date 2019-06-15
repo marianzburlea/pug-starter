@@ -96,7 +96,10 @@ gulp.task('default', () => {
 
 const readline = require('readline');
 readline.emitKeypressEvents(process.stdin);
-process.stdin.setRawMode(true);
+if (process.stdin.setRawMode){
+  process.stdin.setRawMode(true)
+}
+
 process.stdin.on('keypress', (str, key) => {
   if (key.name === 'a') {
     compileMode = 'all';
