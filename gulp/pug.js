@@ -96,7 +96,8 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
           plugins.if(
             fs.existsSync(embedPath),
             plugins.inlineSource({
-              rootpath: path.join(__dirname, '..')
+              rootpath: path.join(__dirname, '..'),
+              attribute: 'embed',
             })
           )
         )
