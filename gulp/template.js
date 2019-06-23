@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import mergeStream from 'merge-stream';
-import { getJsonData } from './util/util';
+import { getJsonData, getBaseUrl } from './util/util';
 import { getStaticFiles } from './util/util';
 import gulpConfig from './util/config';
 
