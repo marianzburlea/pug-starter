@@ -18,7 +18,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
   let baseUrl = getBaseUrl(args, config);
 
   gulp.task('pug', () => {
-    printCompile(compileMode);
+    printCompile(compileMode, args);
     let data = getJsonData({ dataPath }) || {},
       reload = true;
 
