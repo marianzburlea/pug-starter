@@ -97,31 +97,33 @@ gulp.task(
 gulp.task('default', () => {
   console.log('Default gulp task');
 });
+if (!args.production) {
 
-const readline = require('readline');
-readline.emitKeypressEvents(process.stdin);
-if (process.stdin.setRawMode){
-  process.stdin.setRawMode(true)
+  const readline = require('readline');
+  readline.emitKeypressEvents(process.stdin);
+  if (process.stdin.setRawMode){
+    process.stdin.setRawMode(true)
+  }
+
+  process.stdin.on('keypress', (str, key) => {
+    if (key.name === 'a') {
+      compileMode = 'all';
+    }
+    if (key.name === 'c') {
+      compileMode = 'current';
+    }
+    if (key.ctrl && key.name === 'c') {
+      process.exit();
+      console.clear();
+    } 
+    else {
+      // compile all
+      // console.clear();
+      // console.log(`You pressed the '${str}' key`);
+      // console.log();
+      // console.log(key);
+    }
+    printCompile(compileMode, args);
+  });
+  console.log('Any key here: ');
 }
-
-process.stdin.on('keypress', (str, key) => {
-  if (key.name === 'a') {
-    compileMode = 'all';
-  }
-  if (key.name === 'c') {
-    compileMode = 'current';
-  }
-  if (key.ctrl && key.name === 'c') {
-    process.exit();
-    console.clear();
-  } 
-  else {
-    // compile all
-    // console.clear();
-    // console.log(`You pressed the '${str}' key`);
-    // console.log();
-    // console.log(key);
-  }
-  printCompile(compileMode);
-});
-console.log('Any key here: ');

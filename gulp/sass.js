@@ -32,7 +32,7 @@ const sass = ({
 
   // Compile sass
   gulp.task('sass', () => {
-    printCompile(compileMode);
+    printCompile(compileMode, args);
     return gulp.src(cssPath)
       // Only deal with files that change in the pipeline
       .pipe(plugins.plumber())

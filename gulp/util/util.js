@@ -7,9 +7,9 @@ import jsYaml from 'js-yaml';
 import chalk from 'chalk';
 import url from 'url';
 
-export const printCompile = (value) => {
+export const printCompile = (value, args) => {
   // console.clear();
-  console.log(chalk.yellow('You are currently compiling ') + chalk.inverse(value));
+  args && !args.production && console.log(chalk.yellow('You are currently compiling ') + chalk.inverse(value));
 };
 
 export const logError = (name, message) => {
