@@ -8,31 +8,15 @@ import {
   printError,
   fixWindows10GulpPathIssue,
   printCompile,
-  logError
+  logError,
+  getBaseUrl
 } from './util/util';
 
 const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
   const embedPath = path.join(taskTarget, 'embed.css');
-  let baseUrl = '/';
-  if (args.lang) {
-    config.lang = args.lang;
-  }
-  if (args.production) {
-    if (config.deployToGithubIo) {
-      // get the part after github.com
-      const path = url.parse(config.githubUrl).pathname.split('/');
-      // extract the authors, your GitHub username
-      const repository = path[2].split('.').reduce(a => a);
-      // construct the link to github.io used to access the project
-      // when it's deployed on github
-      baseUrl = `/${repository}/`;
-    }
-    else {
-      baseUrl = `${config.customUrl}/`;
-    }
-  }
+  let baseUrl = getBaseUrl(args, config);
 
   gulp.task('pug', () => {
     printCompile(compileMode);
@@ -117,3 +101,5 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
 };
 
 export default pug;
+
+
