@@ -14,6 +14,9 @@
     "update": "git pull && npm run prod"
   },
   "//": "CUSTOM CONFIGURATION",
+  "installConfig": {
+    "pnp": true
+  },
   "config": {
     "customUrl": "http://pug-starter.codetap.io",
     "githubUrl": "http://github.com/marianzburlea/pug-starter.git",
@@ -111,9 +114,10 @@
     "merge-stream": "1.0.1",
     "minimist": "1.2.0",
     "pngquant-bin": "3.1.1",
-    "standard-version": "^6.0.1"
-  },
-  "dependencies": {
-    "js-yaml": "^3.13.1"
+    "standard-version": "6.0.1",
+    "imagemin-gifsicle": "6.0.1",
+    "imagemin-jpegtran": "6.0.0",
+    "imagemin-optipng": "6.0.0",
+    "js-yaml": "3.13.1"
   }
 }
