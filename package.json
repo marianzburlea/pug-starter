@@ -51,10 +51,10 @@
       "cssModular": false,
       "css": {
         "embed": true,
-        "external": false
+        "external": true
       }
     },
-    "autoLaunchBrowser": false
+    "autoLaunchBrowser": true
   },
   "repository": {
     "type": "git",
