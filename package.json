@@ -106,6 +106,7 @@
     "gulp-pug": "4.0.1",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
+    "gulp-sass-variables": "1.2.0",
     "gulp-sourcemaps": "2.6.5",
     "imagemin-gifsicle": "6.0.1",
     "imagemin-jpegoptim": "6.0.0",
@@ -113,14 +114,12 @@
     "imagemin-optipng": "7.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.0.0",
+    "jest": "^24.8.0",
     "js-yaml": "3.13.1",
     "jstransformer-markdown-it": "2.1.0",
     "merge-stream": "2.0.0",
     "minimist": "1.2.0",
     "pngquant-bin": "5.0.2",
     "standard-version": "6.0.1"
-  },
-  "dependencies": {
-    "jest": "^24.8.0"
   }
 }

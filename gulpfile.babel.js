@@ -25,7 +25,7 @@ import sass from './gulp/sass';
 import template from './gulp/template';
 import watch from './gulp/watch';
 import flip from './gulp/flip';
-import { printCompile } from './gulp/util/util.js';
+import { printCompile, getBaseUrl } from './gulp/util/util.js';
 
 global.compileMode = 'all';
 
@@ -48,7 +48,8 @@ const plugins = gulpLoadPlugins({
 // fs.readdirSync('./gulp')
 //   .filter(fileName => /\.(js)$/i.test(fileName))
 //   .map(fileName => fileName.split('.').reduce(a=>a)());
-const taskOptionList = { gulp, config, args, taskTarget, plugins, browserSync };
+const baseUrl = getBaseUrl(args, config)
+const taskOptionList = { gulp, config, args, taskTarget, plugins, browserSync, baseUrl };
 clean(taskOptionList);
 copy(taskOptionList);
 copyIcon(taskOptionList);

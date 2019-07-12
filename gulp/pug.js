@@ -7,15 +7,13 @@ import {
   printError,
   fixWindows10GulpPathIssue,
   printCompile,
-  logError,
-  getBaseUrl
+  logError
 } from './util/util';
 
-const pug = ({ gulp, taskTarget, config, plugins, args, browserSync }) => {
+const pug = ({ gulp, taskTarget, config, plugins, args, browserSync, baseUrl }) => {
   const dir = config.directory;
   const dataPath = path.join(dir.source, dir.data);
   const embedPath = path.join(taskTarget, 'embed.css');
-  let baseUrl = getBaseUrl(args, config);
 
   gulp.task('pug', () => {
     printCompile(compileMode, args);
