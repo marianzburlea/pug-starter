@@ -10,7 +10,8 @@ const sass = ({
   args,
   config,
   taskTarget,
-  browserSync
+  browserSync,
+  baseUrl
 }) => {
   const dir = config.directory;
   const { entry } = config;
@@ -37,6 +38,9 @@ const sass = ({
       // Only deal with files that change in the pipeline
       .pipe(plugins.plumber())
       // .pipe(plugins.cached())
+      .pipe(plugins.sassVariables({
+        $baseUrl: baseUrl
+      }))
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.sass({
         outputStyle: args.production ? 'compressed' : 'expanded',
