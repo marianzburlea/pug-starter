@@ -19,9 +19,9 @@ export const logError = (name, message) => {
   console.log(chalk.inverse(message));
 };
 
-const printError = error =>
+const printError = ({ message } = {}) =>
   `<h1 style='color:#c00'>Error</h1><pre style='text-align:left'>${
-    error.message
+    message
   }</pre>`;
 
 const getJsonData = obj => {
