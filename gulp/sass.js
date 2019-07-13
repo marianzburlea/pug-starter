@@ -59,13 +59,6 @@ const sass = ({
       })
       .pipe(plugins.postcss([
         autoprefixer({
-          browsers: [
-            'last 2 version',
-            '> 5%',
-            'safari 5',
-            'ios 6',
-            'android 4'
-          ],
           // turn off notification for IE grid support
           grid: false
         })

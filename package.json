@@ -72,6 +72,13 @@
     "url": "https://github.com/marianzburlea/pug-starter/issues"
   },
   "homepage": "https://github.com/marianzburlea/pug-starter#readme",
+  "browserslist": [
+    "last 2 version",
+    "> 5%",
+    "safari 5",
+    "ios 6",
+    "android 4"
+  ],
   "devDependencies": {
     "@babel/cli": "7.5.0",
     "@babel/core": "7.5.4",
@@ -87,6 +94,7 @@
     "browser-sync": "2.26.7",
     "bs-eslint-message": "0.0.3",
     "chalk": "2.4.2",
+    "core-js": "^3.1.4",
     "del": "5.0.0",
     "eslint": "6.0.1",
     "foldero": "0.1.1",
