@@ -50,7 +50,7 @@
       "cssEmbed": "embed**.{scss,sass}",
       "cssModular": false,
       "css": {
-        "embed": true,
+        "embed": false,
         "external": true
       }
     },
@@ -109,6 +109,7 @@
     "gulp-imagemin": "6.0.0",
     "gulp-inline-source": "4.0.0",
     "gulp-load-plugins": "2.0.0",
+    "gulp-notify": "^3.2.0",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
     "gulp-pug": "4.0.1",
@@ -117,7 +118,7 @@
     "gulp-sass-variables": "1.2.0",
     "gulp-sourcemaps": "2.6.5",
     "imagemin-gifsicle": "6.0.1",
-    "imagemin-jpegoptim": "6.0.0",
+    "imagemin-jpegoptim": "5.0.0",
     "imagemin-jpegtran": "6.0.0",
     "imagemin-optipng": "7.0.0",
     "imagemin-pngquant": "8.0.0",
