@@ -36,7 +36,12 @@ const sass = ({
     printCompile(compileMode, args);
     return gulp.src(cssPath)
       // Only deal with files that change in the pipeline
-      .pipe(plugins.plumber())
+      .pipe(plugins.plumber({
+        errorHandler: plugins.notify.onError({
+          title: 'Error converting SASS',
+          message: 'Error: <%= error.message %>'
+        })}
+      ))
       // .pipe(plugins.cached())
       .pipe(plugins.sassVariables({
         $baseUrl: baseUrl
@@ -50,6 +55,10 @@ const sass = ({
           path.join(dir.source),
           path.join(dir.source, dir.component)
         ]
+      }))
+      .pipe(plugins.notify({
+        title: 'Pug Starter - CodeTap',
+        message: 'Converting (sass|scss) into beautiful CSS'
       }))
       .on('error', function(error) {
         plugins.sass.logError;
