@@ -7,7 +7,7 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
   // Gulp watch task
   gulp.task('watch', () => {
     console.clear();
-    console.log(config.autoLaunchBrowser ? 'launch' : 'stay')
+
     if (!args.production) {
       browserSync.init({
         server: taskTarget,

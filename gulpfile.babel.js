@@ -126,5 +126,4 @@ if (!args.production) {
     }
     printCompile(compileMode, args);
   });
-  console.log('Any key here: ');
 }
