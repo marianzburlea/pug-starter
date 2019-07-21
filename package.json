@@ -97,7 +97,7 @@
     "chalk": "2.4.2",
     "core-js": "^3.1.4",
     "del": "5.1.0",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "foldero": "0.1.1",
     "gulp": "4.0.2",
     "gulp-cached": "1.1.1",
