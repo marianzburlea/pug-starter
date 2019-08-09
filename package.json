@@ -109,7 +109,7 @@
     "gulp-imagemin": "6.1.0",
     "gulp-if": "3.0.0",
     "gulp-inline-source": "4.0.0",
-    "gulp-load-plugins": "2.0.0",
+    "gulp-load-plugins": "2.0.1",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
