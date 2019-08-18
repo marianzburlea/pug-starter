@@ -100,7 +100,7 @@
     "foldero": "0.1.1",
     "gulp": "4.0.2",
     "gulp-cached": "1.1.1",
-    "gulp-changed": "4.0.0",
+    "gulp-changed": "4.0.1",
     "gulp-changed-in-place": "2.3.0",
     "gulp-debug": "4.0.0",
     "gulp-eslint": "6.0.0",
