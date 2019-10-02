@@ -120,7 +120,7 @@
     "imagemin-gifsicle": "6.0.1",
     "imagemin-jpegoptim": "5.0.0",
     "imagemin-jpegtran": "6.0.0",
-    "imagemin-optipng": "7.0.0",
+    "imagemin-optipng": "7.1.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.0.0",
     "jest": "^24.8.0",
