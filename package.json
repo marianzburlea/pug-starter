@@ -88,7 +88,7 @@
     "@babel/preset-stage-0": "7.0.0",
     "@babel/preset-stage-1": "7.0.0",
     "@babel/register": "7.4.4",
-    "autoprefixer": "9.6.1",
+    "autoprefixer": "9.6.2",
     "babel-eslint": "10.0.2",
     "babel-loader": "8.0.6",
     "browser-sync": "2.26.7",
