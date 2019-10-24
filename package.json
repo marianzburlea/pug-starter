@@ -93,6 +93,7 @@
     "babel-loader": "8.0.6",
     "browser-sync": "2.26.7",
     "bs-eslint-message": "0.0.3",
+    "bulma": "^0.8.0",
     "chalk": "2.4.2",
     "core-js": "^3.1.4",
     "del": "5.0.0",
@@ -130,5 +131,6 @@
     "minimist": "1.2.0",
     "pngquant-bin": "5.0.2",
     "standard-version": "7.0.0"
-  }
+  },
+  "dependencies": {}
 }
