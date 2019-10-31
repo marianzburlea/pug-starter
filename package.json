@@ -88,11 +88,12 @@
     "@babel/preset-stage-0": "7.0.0",
     "@babel/preset-stage-1": "7.0.0",
     "@babel/register": "7.5.5",
-    "autoprefixer": "9.6.1",
+    "autoprefixer": "9.6.2",
     "babel-eslint": "10.0.2",
     "babel-loader": "8.0.6",
     "browser-sync": "2.26.7",
     "bs-eslint-message": "0.0.3",
+    "bulma": "^0.8.0",
     "chalk": "2.4.2",
     "core-js": "^3.1.4",
     "del": "5.0.0",
@@ -129,6 +130,7 @@
     "merge-stream": "2.0.0",
     "minimist": "1.2.0",
     "pngquant-bin": "5.0.2",
-    "standard-version": "6.0.1"
-  }
+    "standard-version": "7.0.0"
+  },
+  "dependencies": {}
 }
