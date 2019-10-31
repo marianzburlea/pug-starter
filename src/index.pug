@@ -1,16 +1,14 @@
 doctype html
 html(lang="en")
   head
-    title Welcome to Pug Starter
-    meta(content="Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects" name="description")
-    //- this checks to see the the "embed" property is set to "true"
-    //- in the package.json file
+    title Music Gateway
+    meta(content="Music Gateway, a worldwide music industry marketplace where you find music industry jobs, music cloud storage, music news, music industry jobs, record labels companies, music business worldwide, music industry news, music industry careers, career in music business and how to start a career in music.")
+
     if config.entry.css.embed
       link(rel="stylesheet" href=`${embedPath}` embed)
   body
-    .content
-      include _component/intro/intro
-    //- The style.css is at the bottom so it doesn't
-    //- block the loading of assets
+    //- .container
+    include _component/welcome/welcome
+
     if config.entry.css.external
       link(rel="stylesheet", href=`${baseUrl}style.css`)
