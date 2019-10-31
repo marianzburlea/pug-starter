@@ -1,19 +1,19 @@
 html,
 body {
   height: 100%;
-  // margin: 0;
-  // padding: 0;
-  background-color: #121212;
+  margin: 0;
+  padding: 0;
 }
-
-.container {
-  height: 100%;
+body {
+  background-image: url(#{$baseUrl}asset/image/become-a-web-developer-today.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
-.button:not(.is-outlined) {
-  background: linear-gradient(135deg, #8338ec 0%,#2196f3 100%);
-}
-
-.is-borderless {
-  border: 0;
+.content {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
 }
