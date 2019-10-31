@@ -1,0 +1,320 @@
+doctype html
+html(lang="en")
+  head
+    title Welcome to Pug Starter
+    meta(content="Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects" name="description")
+    //- this checks to see the the "embed" property is set to "true"
+    //- in the package.json file
+    if config.entry.css.embed
+      link(rel="stylesheet" href=`${embedPath}` embed)
+  body
+    .container
+      .block
+        .columns
+          .column.is-2
+            p.notification 2
+          .column.is-8
+            p.notification 8
+          .column.is-2
+            p.notification 2
+        .columns
+          .column
+            p.notification yes, first
+          .column
+            p.notification yes, second
+
+      .block
+        .field.has-addons
+          p.control
+            input.input
+          p.control
+            a.button.is-info £
+
+      .block
+        .field.has-addons
+          p.control
+            span.select
+              select
+                option(value="") $
+                option(value="") £
+                option(value="") €
+          p.control
+            input.input.to-right(placeholder="amount")
+          p.control
+            a.button.is-danger !
+      .block
+        form
+          .field
+            label.label(for="name-now:)") Name
+            input.input(
+              placeholder="type your name now!"
+              id="name-now:)"
+            )
+          .field
+            label.label(for="name-now:)") Name
+            input.input.is-success(
+              placeholder="type your name now!"
+              id="name-now:)"
+            )
+          .field
+            label.label(for="name-now:)") Name
+            input.input.is-danger(
+              placeholder="type your name now!"
+              id="name-now:)"
+            )
+
+          .filed
+            label.label(for="select") Cats
+            p.control
+              span.select
+                select(id="select")
+                  option(value="") neata
+                  option(value="") ziua
+                  option(value="") dupa-amiaza
+                  option(value="") noapte
+
+          .filed
+            label.label descriere
+            p.control
+              textarea.textarea nice!!
+
+      .block
+        nav.level
+          .level-left
+            p.level-item
+              a(href="#")
+                strong all
+            p.level-item
+              a(href="#") published
+            p.level-item
+              a(href="#") draft
+            p.level-item
+              a(href="#") deleted
+            p.level-item
+              a.button.is-primary(href="#") new
+
+          .level-right
+            .level-item
+              .field
+                p.control
+                  input.input.is-success(placeholder="search dogs")
+      .block
+        nav.pagination
+          a(href="" class="pagination-previous" disabled) Precendentul
+          a(href="" class="pagination-next") Urmatorul
+          ul.pagination-list
+            li
+              a.pagination-link.is-current 1
+            li
+              a.pagination-link 2
+            li
+              a.pagination-link 3
+            li
+              a.pagination-link 4
+            li
+              a.pagination-link 5
+            li
+              a.pagination-link 6
+      .block
+        .card
+          .card-content
+            p.title super nice indeed
+          .card-footer
+            p.card-footer-item
+              span View on twitter
+            p.card-footer-item
+              span View on facebook
+      .block
+        section.hero
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero.is-warning
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero.is-danger
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero.is-info
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero.is-success
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero.is-primary
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+        section.hero
+          .hero-body
+            .container
+              h1.title hero is nice
+              h2.subtitle super nice indeed
+      .block
+        nav.navbar
+          .navbar-brand
+            a.navbar-item
+              h1.title.is-4 CodeTap
+          .navbar-start
+            a.navbar-item
+              span.icon not
+
+          .navbar-burger.burger(data-target="navy" aria-label="menu" aria-expanded="false")
+            span
+            span
+            span
+
+          .navbar-end.navbar-menu#navy.is-active
+            a.navbar-item Home
+            a.navbar-item Contact
+            a.navbar-item Courses
+            a.navbar-item Social
+
+      .block
+        article.message.is-danger
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+        article.message.is-warning
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+        article.message.is-info
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+        article.message.is-success
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+        article.message.is-primary
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+        article.message
+          .message-header
+            p more info
+          .message-body Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus deleniti in nemo debitis, impedit, porro quas expedita quod voluptas placeat non iusto odio rem, sapiente architecto animi eligendi unde veritatis.
+      .block
+        .tag.is-black black
+        .tag.is-dark dark
+        .tag.is-light light
+        .tag.is-white white
+        .tag.is-primary primary
+        .tag.is-info info
+        .tag.is-success success
+        .tag.is-black.is-medium black
+        .tag.is-primary.is-large
+          | black
+          button.delete
+        .tag comedy
+        .tag sci-fi
+        .tag love
+      .block
+        .notification.is-danger
+          button.delete
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque quae corrupti sint iure alias obcaecati architecto expedita nam tenetur. Ipsa labore illo dolorem, quas in minima quae cupiditate voluptates.
+        .notification.is-warning
+          button.delete
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque quae corrupti sint iure alias obcaecati architecto expedita nam tenetur. Ipsa labore illo dolorem, quas in minima quae cupiditate voluptates.
+        .notification.is-success
+          button.delete
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque quae corrupti sint iure alias obcaecati architecto expedita nam tenetur. Ipsa labore illo dolorem, quas in minima quae cupiditate voluptates.
+        .notification.is-info
+          button.delete
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque quae corrupti sint iure alias obcaecati architecto expedita nam tenetur. Ipsa labore illo dolorem, quas in minima quae cupiditate voluptates.
+        .notification
+          button.delete
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque quae corrupti sint iure alias obcaecati architecto expedita nam tenetur. Ipsa labore illo dolorem, quas in minima quae cupiditate voluptates.
+      .block
+        .box
+          h1.title hey
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio perferendis distinctio ipsam nam est ullam, consectetur id aliquam hic animi voluptate repudiandae ab odit at vel dicta, aliquid voluptatem esse.
+      .block
+        a.button.is-hovered Hovered
+        a.button.is-focused focused
+        a.button.is-active active
+        a.button.is-loading loading
+        a.button(disabled) disabled
+      .block
+        a.is-inverted.button.is-small button
+        a.is-inverted.button.is-primary.is-medium primary
+        a.is-inverted.button.is-info.is-large info
+      .block
+        a.is-outlined.button.is-small button
+        a.is-outlined.button.is-primary.is-medium primary
+        a.is-outlined.button.is-info.is-large info
+      .block
+        a.button.is-small button
+        a.button.is-primary.is-medium primary
+        a.button.is-info.is-large info
+      .block
+        a.button button
+        a.button.is-primary primary
+        a.button.is-info info
+        a.button.is-success success
+        a.button.is-warning warning
+        a.button.is-danger danger
+      .block
+        h1.title Music is my destiny
+        h2.subtitle yeeeeeeeeeeees
+        h3.title.is-6 asdasdas
+
+      .block
+        p.content.is-small Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quas optio voluptatem voluptates molestias rem veniam! Ratione provident rem maiores consequuntur blanditiis saepe ducimus! Aut obcaecati dolore harum illo reprehenderit.
+        p Itaque, labore iure tempore ducimus repudiandae numquam voluptates adipisci minima mollitia. Deleniti, adipisci? Consectetur error reprehenderit inventore ipsa nulla odit vitae repudiandae. Error inventore molestias voluptates expedita quisquam ex nesciunt?
+
+      .block
+        button.button 1
+        button.button.is-white 2
+        button.button.is-light 3
+        button.button.is-dark 3
+        button.button.is-dark 3
+        button.button.is-link 3
+    .block
+      aside.menu
+        p.menu-label super menu
+        ul.menu-list
+          li
+            a(href="") Menu 1
+          li
+            a(href="") Menu 2
+          li
+            a(href="") Menu 3
+          li
+            a(href="") Menu 4
+          li
+            a(href="") Menu 5
+        p.menu-label super menu other
+        ul.menu-list
+          li
+            a(href="" class="is-active") Menu 1
+              ul
+                li
+                  a(href="") nice 1
+                li
+                  a(href="") nice 2
+                li
+                  a(href="") nice 3
+          li
+            a(href="") Menu 2
+          li
+            a(href="") Menu 3
+          li
+            a(href="") Menu 4
+          li
+            a(href="") Menu 5
+    //- The style.css is at the bottom so it doesn't
+    //- block the loading of assets
+    if config.entry.css.external
+      link(rel="stylesheet", href=`${baseUrl}style.css`)
