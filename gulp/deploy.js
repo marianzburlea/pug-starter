@@ -20,7 +20,9 @@ const deploy = ({
           file.dirname = pathPartList.join(path.sep);
         }
       }))
-      .pipe(plugins.ghPages());
+      .pipe(plugins.ghPages({
+        branch: 'gh-pages',
+      }));
   });
 };
 
