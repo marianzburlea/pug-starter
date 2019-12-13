@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp dev --lang=en",
     "prod": "npm run prod-en",
+    "build": "gulp build --production --lang=en",
     "prod-en": "gulp build --production --lang=en",
     "prod-ro": "gulp build --production --lang=ro",
     "deploy": "gulp build --production --lang=en && gulp deploy --production && gulp clean:ghpages --production",
@@ -96,6 +97,7 @@
     "bs-eslint-message": "0.0.3",
     "bulma": "^0.8.0",
     "chalk": "2.4.2",
+    "constantinople": "^4.0.1",
     "core-js": "^3.1.4",
     "del": "5.1.0",
     "eslint": "6.1.0",
