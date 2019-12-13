@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    title Welcome to Pug Starter
+    meta(content="Simple pug (jade) starter aimed to quickly deliver HTML & CSS projects" name="description")
+    //- this checks to see the the "embed" property is set to "true"
+    //- in the package.json file
+    if config.entry.css.embed
+      link(rel="stylesheet" href=`${embedPath}` embed)
+  body
+    .content
+      block awesome-content
+    //- The style.css is at the bottom so it doesn't
+    //- block the loading of assets
+    if config.entry.css.external
+      link(rel="stylesheet", href=`${baseUrl}style.css`)
