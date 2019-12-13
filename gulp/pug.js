@@ -25,14 +25,18 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync, baseUrl }) 
       body: `<h1 style='color: black; font-size: 2rem'>as you've made changes <br>to your PUG file 💃</h1>`
     });
 
+    const filePathList = [
+      path.join(dir.source, '**/*.pug'),
+    ]
+    // Ignore files and folders that start with '_'
+    if (!config.render.allPugFiles) {
+      filePathList.push('!' + path.join(dir.source, '{**/_*,**/_*/**}'))
+    }
+
     return (
       gulp
         // target pug files
-        .src([
-          path.join(dir.source, '**/*.pug'),
-          // Ignore files and folders that start with '_'
-          '!' + path.join(dir.source, '{**/_*,**/_*/**}')
-        ])
+        .src(filePathList)
         // .pipe(plugins.debug())
         // Only deal with files that change in the pipeline
         .pipe(
@@ -53,7 +57,8 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync, baseUrl }) 
           errorHandler: plugins.notify.onError({
             title: 'Error converting PUG',
             message: 'Error: <%= error.message %>'
-          })}
+          })
+        }
         ))
         // compile pug to html
         .pipe(
@@ -75,7 +80,7 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync, baseUrl }) 
           title: 'Pug Starter - CodeTap',
           message: 'Converting PUG into beautiful HTML'
         }))
-        .on('error', function(error) {
+        .on('error', function (error) {
           browserSync.notify(printError(error), 25000);
           reload = false;
           this.emit('end');
