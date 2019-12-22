@@ -40,7 +40,8 @@ const sass = ({
         errorHandler: plugins.notify.onError({
           title: 'Error converting SASS',
           message: 'Error: <%= error.message %>'
-        })}
+        })
+      }
       ))
       // .pipe(plugins.cached())
       .pipe(plugins.sassVariables({
@@ -56,11 +57,11 @@ const sass = ({
           path.join(dir.source, dir.component)
         ]
       }))
-      .pipe(plugins.notify({
-        title: 'Pug Starter - CodeTap',
-        message: 'Converting (sass|scss) into beautiful CSS'
-      }))
-      .on('error', function(error) {
+      // .pipe(plugins.notify({
+      //   title: 'Pug Starter - CodeTap',
+      //   message: 'Converting (sass|scss) into beautiful CSS'
+      // }))
+      .on('error', function (error) {
         plugins.sass.logError;
         browserSync.notify(printError(error), 25000);
         console.log(error);
@@ -76,12 +77,12 @@ const sass = ({
       // Fix for Windows 10 and gulp acting crazy
       .pipe(plugins.rename(file => {
         const dest = taskTarget;
-        fixWindows10GulpPathIssue({file, dest, plugins, config})
+        fixWindows10GulpPathIssue({ file, dest, plugins, config })
       }))
 
       .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(taskTarget.replace(/\_/, '')))
-      .pipe(browserSync.stream({match: '**/*.css'}));
+      .pipe(browserSync.stream({ match: '**/*.css' }));
   });
 };
 
