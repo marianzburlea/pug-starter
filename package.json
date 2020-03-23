@@ -12,7 +12,8 @@
     "deploy": "gulp build --production --lang=en && gulp deploy --production && gulp clean:ghpages --production",
     "release": "standard-version",
     "update": "git pull && npm run prod",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "echo \"Reset Git\" && rm -rf .git && git init && git add . && git commit -m \"From Zero to Hired with CodeTap Academy\""
   },
   "//": "CUSTOM CONFIGURATION",
   "installConfig": {
