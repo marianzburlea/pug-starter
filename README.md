@@ -168,3 +168,9 @@ When you're building a single page app or website, there is no point in having t
 In this scenario you can have either both **_embed_** and external or just external. The most common scenario is to have only one external style sheet file to be loaded and most of the time that's just fine.
 
 If you want to improve your SEO and user experience even further, I strongly recommend to use a combination of both **_embed_** and external. The **_embed_** style sheet should only contain the minimum amount of styles for the initial visible part of the page to render. The rest of the styles can be put in the external CSS file.
+
+## Auto reset git
+
+If you run `npm i`, the git history will get reset.
+
+To avoid resetting the git history run `npm i --ignore-scripts`
