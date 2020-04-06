@@ -133,7 +133,7 @@
     "js-yaml": "3.13.1",
     "jstransformer-markdown-it": "2.1.0",
     "merge-stream": "2.0.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "pngquant-bin": "5.0.2",
     "standard-version": "7.0.0"
   },
