@@ -14,7 +14,7 @@
     "update": "git pull && npm run prod",
     "test": "jest",
     "install:normal": "npm run i --ignore-scripts",
-    "postinstall": "echo \"Reset Git\" && rm -rf .git && git init && git add . && git commit -m \"From Zero to Hired with CodeTap Academy\""
+    "reset-git": "echo \"Reset Git\" && rm -rf .git && git init && git add . && git commit -m \"From Zero to Hired with CodeTap Academy\""
   },
   "//": "CUSTOM CONFIGURATION",
   "installConfig": {
