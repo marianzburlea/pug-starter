@@ -25,6 +25,12 @@ const watch = ({ gulp, plugins, args, config, browserSync, taskTarget }) => {
         gulp.series('pug')
       );
 
+      // JS
+      gulp.watch([
+        `./${dir.source}/${dir.asset}/js/*.js`,
+      ], gulp.series('copy', 'pug'));
+
+
       // Template
       dir.templateCollection.map(folderName => {
         gulp.watch(
