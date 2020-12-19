@@ -18,7 +18,7 @@
   },
   "//": "CUSTOM CONFIGURATION",
   "installConfig": {
-    "pnp": true
+    "pnp": false
   },
   "config": {
     "customUrl": "http://pug-starter.codetap.academy",
@@ -124,7 +124,6 @@
     "gulp-sass-variables": "1.2.0",
     "gulp-sourcemaps": "2.6.5",
     "imagemin-gifsicle": "6.0.1",
-    "imagemin-jpegoptim": "^6.0.0",
     "imagemin-jpegtran": "6.0.0",
     "imagemin-optipng": "7.1.0",
     "imagemin-pngquant": "8.0.0",
