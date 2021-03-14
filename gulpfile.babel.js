@@ -1,4 +1,5 @@
 'use strict';
+require("@babel/register")
 
 // GUlp is a simple platform-agnostic toolkit that helps you automate painful
 // and time-consuming tasks in your workflow
