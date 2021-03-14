@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  pug-starter:
+    build: ./
+    container_name: pug-starter
+    # network_mode: host
