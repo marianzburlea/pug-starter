@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "Simple pug (jade) starter [framework] enabling faster delivery of HTML & CSS projects to a private server and/or automatic deployment of GitHub pages.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "gulp dev --lang=en",
     "prod": "npm run prod-en",
