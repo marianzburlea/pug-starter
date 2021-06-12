@@ -118,7 +118,6 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
-    "gulp-pug": "4.0.1",
     "gulp-rename": "1.4.0",
     "gulp-sass-variables": "1.2.0",
     "gulp-sourcemaps": "2.6.5",
@@ -132,11 +131,12 @@
     "jstransformer-markdown-it": "2.1.0",
     "merge-stream": "2.0.0",
     "minimist": "1.2.0",
-    "pngquant-bin": "5.0.2",
-    "standard-version": "7.0.0"
+    "pngquant-bin": "5.0.2"
   },
   "dependencies": {
     "gulp-dart-sass": "^1.0.2",
-    "sass": "^1.34.1"
+    "gulp-pug": "^5.0.0",
+    "sass": "^1.34.1",
+    "standard-version": "^9.3.0"
   }
 }
