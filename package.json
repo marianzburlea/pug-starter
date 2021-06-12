@@ -120,7 +120,6 @@
     "gulp-postcss": "8.0.0",
     "gulp-pug": "4.0.1",
     "gulp-rename": "1.4.0",
-    "gulp-sass": "4.0.2",
     "gulp-sass-variables": "1.2.0",
     "gulp-sourcemaps": "2.6.5",
     "imagemin-gifsicle": "6.0.1",
@@ -136,5 +135,8 @@
     "pngquant-bin": "5.0.2",
     "standard-version": "7.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-dart-sass": "^1.0.2",
+    "sass": "^1.34.1"
+  }
 }

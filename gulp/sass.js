@@ -48,7 +48,7 @@ const sass = ({
         $baseUrl: baseUrl
       }))
       .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.sass({
+      .pipe(plugins.dartSass({
         outputStyle: args.production ? 'compressed' : 'expanded',
         precision: 10,
         sync: true,
