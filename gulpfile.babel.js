@@ -22,6 +22,7 @@ import deploy from './gulp/deploy';
 import font from './gulp/font';
 import image from './gulp/image';
 import pug from './gulp/pug';
+import javascript from './gulp/javascript';
 import sass from './gulp/sass';
 import template from './gulp/template';
 import watch from './gulp/watch';
@@ -58,6 +59,7 @@ deploy(taskOptionList);
 font(taskOptionList);
 image(taskOptionList);
 pug(taskOptionList);
+javascript(taskOptionList);
 sass(taskOptionList);
 template(taskOptionList);
 watch(taskOptionList);
@@ -74,6 +76,7 @@ gulp.task(
     'image',
     'sass',
     'pug',
+    'javascript',
     'template',
     'watch'
   )
@@ -90,6 +93,7 @@ gulp.task(
     'image',
     'sass',
     'pug',
+    'javascript',
     'template',
     'flip'
   )
@@ -117,7 +121,7 @@ if (!args.production) {
     if (key.ctrl && key.name === 'c') {
       process.exit();
       console.clear();
-    } 
+    }
     else {
       // compile all
       // console.clear();
