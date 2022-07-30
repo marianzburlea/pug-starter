@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Shuffle",
+    "link": "https://9gag.com/shuffle",
+    "icon": "🔀",
+    "type": "internal",
+    "status": "normal"
+  },
+  {
+    "label": "Get App",
+    "link": "https://about.9gag.com/app",
+    "icon": "📱",
+    "type": "external",
+    "status": "normal"
+  },
+  {
+    "label": "Memeland",
+    "link": "https://www.memeland.com",
+    "icon": "🏴‍☠️",
+    "type": "external",
+    "status": "green"
+  },
+  {
+    "label": "Potatoz",
+    "link": "https://www.memeland.com/potatoz",
+    "icon": "🥔",
+    "type": "external",
+    "status": "green"
+  }
+]

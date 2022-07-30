@@ -1,0 +1,27 @@
+.top-menu {
+  // border: 10px solid red;
+
+  &__link {
+    padding: 0 0.5rem;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    line-height: 3rem;
+    font-weight: bold; // 700
+    position: relative;
+
+    &.green {
+      &::after {
+        top: -4px;
+        right: 0;
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: #4cd964;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+      }
+    }
+  }
+}

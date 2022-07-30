@@ -2438,13 +2438,6 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-concat-with-sourcemaps@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/concat-with-sourcemaps/-/concat-with-sourcemaps-1.1.0.tgz#d4ea93f05ae25790951b99e7b3b09e3908a4082e"
-  integrity sha512-4gEjHJFT9e+2W/77h/DS5SGUgwDaOwprX8L/gl5+3ixnzkVJJsZWDSelmN3Oilw3LNDZjZV0yqH1hLG3k6nghg==
-  dependencies:
-    source-map "^0.6.1"
-
 config-chain@^1.1.11:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.13.tgz#fad0795aa6a6cdaff9ed1b68e9dff94372c232f4"
@@ -4623,16 +4616,6 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
-gulp-babel@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-babel/-/gulp-babel-8.0.0.tgz#e0da96f4f2ec4a88dd3a3030f476e38ab2126d87"
-  integrity sha512-oomaIqDXxFkg7lbpBou/gnUkX51/Y/M2ZfSjL2hdqXTAlSWZcgZtd2o0cOH0r/eE8LWD0+Q/PsLsr2DKOoqToQ==
-  dependencies:
-    plugin-error "^1.0.1"
-    replace-ext "^1.0.0"
-    through2 "^2.0.0"
-    vinyl-sourcemaps-apply "^0.2.0"
-
 gulp-cached@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/gulp-cached/-/gulp-cached-1.1.1.tgz#fe7cd4f87f37601e6073cfedee5c2bdaf8b6acce"
@@ -4682,15 +4665,6 @@ gulp-cli@^2.2.0:
     semver-greatest-satisfied-range "^1.1.0"
     v8flags "^3.2.0"
     yargs "^7.1.0"
-
-gulp-concat@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/gulp-concat/-/gulp-concat-2.6.1.tgz#633d16c95d88504628ad02665663cee5a4793353"
-  integrity sha1-Yz0WyV2IUEYorQJmVmPO5aR5M1M=
-  dependencies:
-    concat-with-sourcemaps "^1.0.0"
-    through2 "^2.0.0"
-    vinyl "^2.0.0"
 
 gulp-dart-sass@^1.0.2:
   version "1.0.2"

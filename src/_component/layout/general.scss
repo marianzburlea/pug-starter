@@ -1,19 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 body {
-  background-image: url(#{$baseUrl}asset/image/become-a-web-developer-today.jpg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  // background-image: url(#{$baseUrl}asset/image/become-a-web-developer-today.jpg);
+  // background-size: cover;
+  font: 14px -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Helvetica,Geneva,sans-serif
 }
+
 .content {
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 1rem;
 }
