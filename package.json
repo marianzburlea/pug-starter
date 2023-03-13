@@ -22,7 +22,7 @@
     "pnp": false
   },
   "config": {
-    "customUrl": "http://pug.wowjob.dev",
+    "customUrl": "//pug.wowjob.dev",
     "githubUrl": "http://github.com/marianzburlea/pug-starter.git",
     "deployToGithubIo": false,
     "directory": {
