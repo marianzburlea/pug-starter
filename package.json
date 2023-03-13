@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp dev --lang=en",
+    "dev": "gulp dev --lang=en",
     "prod": "npm run prod-en",
     "build": "gulp build --production --lang=en",
     "prod-en": "gulp build --production --lang=en",
@@ -26,7 +27,7 @@
     "deployToGithubIo": true,
     "directory": {
       "development": "tmp",
-      "production": "build",
+      "production": "public",
       "ghpages": ".publish",
       "source": "src",
       "data": "_data",
