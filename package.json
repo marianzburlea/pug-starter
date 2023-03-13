@@ -22,9 +22,9 @@
     "pnp": false
   },
   "config": {
-    "customUrl": "http://pug-starter.codetap.academy",
+    "customUrl": "http://pug.wowjob.dev",
     "githubUrl": "http://github.com/marianzburlea/pug-starter.git",
-    "deployToGithubIo": true,
+    "deployToGithubIo": false,
     "directory": {
       "development": "tmp",
       "production": "public",
