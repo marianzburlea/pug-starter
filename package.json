@@ -27,7 +27,7 @@
     "deployToGithubIo": true,
     "directory": {
       "development": "tmp",
-      "production": "public",
+      "production": "dist",
       "ghpages": ".publish",
       "source": "src",
       "data": "_data",
