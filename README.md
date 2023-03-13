@@ -2,6 +2,8 @@
 
 # Pug starter
 
+If you're looking to start a career as a **Web Developer**, become hireable and access top highest paying jobs on the market, visit [WoW Job](https://wowjob.dev)
+
 ## Table of contents
 
 - [YouTube video tutorials](#youtube-video-tutorials)

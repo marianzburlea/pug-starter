@@ -1,6 +1,7 @@
 node_modules
 tmp
 build*
+public*
 npm-debug.log*
 package-lock.json
 .vscode

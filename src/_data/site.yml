@@ -1,1 +1,8 @@
-message: "Today the weather is very nice."
+message:
+  - Welcome to the world of lightning-fast websites! We are excited to introduce you to our free "pug-starter" project on git, specifically designed to help you build websites that load and render at lightning speed, ensuring a perfect 100/100 Google Page Speed Score.
+
+  - To get started with this project, it is crucial that you take the time to thoroughly read the README.md file. This file contains all the essential information you need to know to properly set up and use our pug-starter project. From detailed installation instructions to comprehensive usage guides, the README.md file will be your go-to resource for all things pug-starter.
+
+  - We understand that starting a new project can be overwhelming, but with pug-starter, we've taken the hassle out of building fast-loading websites. Our project is user-friendly and easy to understand, making it the perfect starting point for anyone looking to build a website that is both visually stunning and incredibly fast.
+
+  - So, why wait? Get started today and see your website load in the blink of an eye! We are confident that you will love our pug-starter project and the results it will bring. Don't hesitate to reach out to us if you have any questions or need assistance along the way. Happy coding!

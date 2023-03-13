@@ -1,0 +1,6 @@
+.welcome
+  h1.welcome__title= data.info.message
+
+  .welcome__info-wrap
+    each info in data.site.message 
+      p.welcome__info= info
