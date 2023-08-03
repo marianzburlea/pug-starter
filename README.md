@@ -88,7 +88,7 @@ add **_modularCss_** support. When enabled in the config of `package.json` it wi
 add **_baseurl_** support which can be configured for GitHub.io and custom domain. Check _package.json_ config section for
 
 - _deployToGithubIo_ - (true|false) by default it is set to _true_ and will affect the value of _baseUrl_ when you want to deploy to GitHub.io; You want to set it to _false_ if you want to use _customUrl_ as the value of _baseUrl_
-- _customUrl_ - if you want baseUrl to have a value like http://my-project.codetap.io or any other one;
+- _customUrl_ - if you want baseUrl to have a value like http://my-project.wowjob.dev or any other one;
 - _githubUrl_ - if you want baseUrl to have a value like http://github.com/marianzburlea/pug-starter.git or any other one;
 
 In the end you can use _baseUrl_ to prefix your paths like:
